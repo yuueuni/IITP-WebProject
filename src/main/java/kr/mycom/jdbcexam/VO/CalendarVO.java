@@ -9,12 +9,12 @@ public class CalendarVO {
     private Date datetime;
     private Date datetime_end;
     private String status;
-    private Integer dogcount;
+    private String dogcount;
 
     public CalendarVO() {
     }
 
-    public CalendarVO(Integer id, String name,Integer dogcount, String url, Date datetime, Date datetime_end, String status) {
+    public CalendarVO(Integer id, String name,String dogcount, String url, Date datetime, Date datetime_end, String status) {
         this.id = id;
         this.name = name;
         this.url = url;
@@ -86,11 +86,11 @@ public class CalendarVO {
         this.status = status;
     }
 
-    public Integer getDougcount() {
+    public String getDogcount() {
         return dogcount;
     }
 
-    public void setDougcount(Integer dougcount) {
-        this.dogcount = dougcount;
+    public void setDogcount(String dogcount) {
+        this.dogcount = dogcount;
     }
 }

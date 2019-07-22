@@ -14,8 +14,8 @@
 <div class = "add_calendar">
     <p>댕댕이 입력정보 카테고리를 선택후 횟수를 추가해주세요~</p>
 
-    <form action="/add">
-        <select name="category" name ="name">
+    <form action="/Logic" method="get">
+        <select  name ="name">
             <option value="walk">산책</option>
             <option value="snack">간식</option>
             <option value="toilet">배변</option>
@@ -23,7 +23,7 @@
 
         <input type="text" name ="dogcount" placeholder="입력한 횟수를 적어주세요">
         <br><br>
-        <input type="submit">
+        <input type="submit" value="등록">
     </form>
 
 

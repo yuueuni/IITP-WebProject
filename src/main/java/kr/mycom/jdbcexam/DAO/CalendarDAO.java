@@ -18,7 +18,7 @@ public class CalendarDAO {
             conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 
         } catch (ClassNotFoundException e) {
-            System.out.println(" 드라이버 로딩 실패 ");
+            System.out.println(" �뱶�씪�씠踰� 濡쒕뵫 �떎�뙣 ");
         }
 
         return conn;
@@ -39,16 +39,14 @@ public class CalendarDAO {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                int id = rs.getInt("id");
+            	Integer id = rs.getInt("id");
                 String name = rs.getString("name");
-                int dogcount = rs.getInt("dogcount");
+                String dogcount = rs.getString("dogcount");
                 Timestamp datetime = rs.getTimestamp("datetime");
                 Timestamp datetime_end = rs.getTimestamp("datetime_end");
-                //String datetime = rs.getString("datetime");
-                //String datetime_end = rs.getString("datetime_end");
-
                 String status = rs.getString("status");
                 String url = rs.getString("url");
+           
                 calendar = new CalendarVO(id, name, dogcount, url, datetime, datetime_end, status);
 
             }
@@ -93,13 +91,12 @@ public class CalendarDAO {
 
                 // Column
                 // PK , name , email , password
-                String sql = "INSERT INTO calendar VALUES (?,?,?,now(),now(),?);";
+                String sql = "INSERT INTO calendar VALUES (?,?,?,now(),now(),'123');";
                 pstmt = conn.prepareStatement(sql);
 
                 pstmt.setString(1, vo.getName());
-                pstmt.setInt(2, vo.getDougcount());
-                pstmt.setString(3, vo.getUrl());
-                pstmt.setString(4, vo.getStatus());
+                pstmt.setString(2, vo.getDogcount());
+                pstmt.setString(3, vo.getStatus());
 
 
                 int count = pstmt.executeUpdate();
