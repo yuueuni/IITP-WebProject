@@ -5,18 +5,17 @@ import java.sql.*;
 import main.java.kr.mycom.jdbcexam.VO.CalendarVO;
 
 public class CalendarDAO {
-    private static String dburl = "jdbc:mysql://localhost:3306/calendar";
-    private static String dbUser = "calendaruser";
-    private static String dbpasswd = "1234";
-
+    private static String dburl = "jdbc:mysql://localhost:3306/calendar?" + "useUnicode=true&characterEncoding=utf8";
+    private static String dbUser = "root";
+    private static String dbpasswd = "user";
 
     private Connection getConnection() throws SQLException {
         Connection conn = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-
+            System.out.println("연결성공");
         } catch (ClassNotFoundException e) {
             System.out.println(" �뱶�씪�씠踰� 濡쒕뵫 �떎�뙣 ");
         }
@@ -25,17 +24,17 @@ public class CalendarDAO {
     }
 
 
-    public CalendarVO getCalendar() {
+    public void getCalendar() throws SQLException, ClassNotFoundException {
+    	
         CalendarVO calendar = null;
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
 
         try {
-
+        	conn = getConnection();
             String sql = "SELECT * FROM calendar ";
             ps = conn.prepareStatement(sql);
-            //ps.setInt(1, roleId);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -48,7 +47,7 @@ public class CalendarDAO {
                 String url = rs.getString("url");
            
                 calendar = new CalendarVO(id, name, dogcount, url, datetime, datetime_end, status);
-
+                System.out.println(calendar);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,8 +74,9 @@ public class CalendarDAO {
                 }
             }
         }
-
-        return calendar;
+	
+    	
+       
     }
 
 
@@ -91,12 +91,13 @@ public class CalendarDAO {
 
                 // Column
                 // PK , name , email , password
-                String sql = "INSERT INTO calendar VALUES (?,?,?,now(),now(),'123');";
+                String sql = "INSERT INTO calendar(id,name,dogcount,url,datetime,datetime_end,status) VALUES (4,?,?,?,now(),now(),'123');";
                 pstmt = conn.prepareStatement(sql);
 
-                pstmt.setString(1, vo.getName());
+                //pstmt.setInt(1,vo.getId());
+               	pstmt.setString(1,vo.getName());
                 pstmt.setString(2, vo.getDogcount());
-                pstmt.setString(3, vo.getStatus());
+                pstmt.setString(3, vo.getUrl());
 
 
                 int count = pstmt.executeUpdate();

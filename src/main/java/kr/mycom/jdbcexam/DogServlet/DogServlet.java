@@ -27,16 +27,12 @@ public class DogServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.setCharacterEncoding("utf-8");
-    	CalendarVO vo = new CalendarVO();
-    	
-    	
-    	
+    	CalendarVO vo = new CalendarVO();   	
     	
     	//String name = request.getParameter("name");
     	vo.setName(request.getParameter("name"));
-    	vo.setDogcount(request.getParameter("dogcount"));
-    	
-    	
+    	vo.setDogcount(request.getParameter("dogcount"));    	
+    	vo.setUrl("www.naver.com");
     	CalendarDAO dao = new CalendarDAO();
     	
     	dao.insertCalendar(vo);
@@ -45,7 +41,7 @@ public class DogServlet extends HttpServlet {
     	
     	
     	
-    	response.sendRedirect("index.jsp");
+    	response.sendRedirect("web/index.jsp");
     	
     	
     }

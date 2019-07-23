@@ -14,7 +14,7 @@
 <div class = "add_calendar">
     <p>댕댕이 입력정보 카테고리를 선택후 횟수를 추가해주세요~</p>
 
-    <form action="/Logic" method="get">
+    <form action="../Logic" method="GET">
         <select  name ="name">
             <option value="walk">산책</option>
             <option value="snack">간식</option>
