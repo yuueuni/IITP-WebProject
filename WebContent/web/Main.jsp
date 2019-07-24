@@ -72,10 +72,10 @@
 									<div class="collapse navbar-collapse"
 										id="bs-example-navbar-collapse-1">
 										<ul class="nav navbar-nav">
-											<li><a  href="Main.jsp">메인 </a></li>
+											<li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
 											<li><a href="about.jsp">소개</a></li>
-											<li><a class="active" href="dogmanaging.jsp">강아지매니징<span class="sr-only">(current)</span></a></li>
-											<li><a  href="dogdictionary.jsp">애견사전</a></li>
+											<li><a href="dogmanaging.jsp">강아지매니징</a></li>
+											<li><a href="dogdictionary.jsp">애견사전</a></li>
 											<li><a href="board.jsp">커뮤니티</a></li>
 										</ul>
 									</div>
@@ -99,29 +99,21 @@
 	<div class="main-content">
 		<div class="container">
 			<div class="m-content">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+				<div class="mainImg">
+					<img style="width: 1100px;" src="web_page//images/main_2.jpg" alt="main"class="img-responsive">
+				</div>
 				<div class="mainTxt">
-					<h1>강아지 매니징</h1>
+					<h1>반려동물의 모습을 기록하세요?..?</h1>
 					<br>
 				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+
+
+				<div class="mainBtn">
+					<button class="label label-danger"
+						onclick="location='doginput.jsp'">강아지 등록하기</button>
+					<br>
+				</div>
+
 			</div>
 			<div class="clearfix"></div>
 			<br>

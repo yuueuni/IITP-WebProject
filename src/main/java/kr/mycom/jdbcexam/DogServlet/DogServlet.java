@@ -41,7 +41,7 @@ public class DogServlet extends HttpServlet {
     	
     	
     	
-    	response.sendRedirect("web/index.jsp");
+    	response.sendRedirect("web/dogmanaging.jsp");
     	
     	
     }

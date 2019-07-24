@@ -1,19 +1,14 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jeongheekim
-  Date: 2019-07-21
-  Time: 20:08
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-   <title>DOGUMENT</title>
+<title>DOGUMENT</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<!meta charset utf="8">
+		<meta charset utf="8">
 		<!--bootstrap-->
 		<link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
@@ -38,21 +33,7 @@
 			});
         </script>
         <style>
-     	.selectbox{
-        width: 200px;
-		padding: .8em .5em;
-		border: 1px solid #999;
-		font-family: inherit;
-		background: url('arrow.jpg') no-repeat 95% 50%;
-		border-radius: 0px;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		}
-
-		selectbox::-ms-expand {
-    		display: none;
-		}
+     
         .container_2 .half {
             float: none;
             height: 100%;
@@ -252,11 +233,10 @@
         body .container_2 .content .signup-cont {
         display: none;
         }
-        
         </style>
 </head>
-<body>
-<!--header-part-->
+	<body>
+		<!--header-part-->
 		<div class="banner-background" id="to-top">
 			<div class="container">
 				<div class="nav-back">
@@ -280,7 +260,7 @@
 									<div class="mainmenu">
 										<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 											<ul class="nav navbar-nav">
-												<<li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
+												<li><a  href="Main.jsp">메인 </a></li>
 												<li><a href="about.jsp">소개</a></li>
 												<li><a href="dogmanaging.jsp">강아지매니징</a></li>
 												<li><a href="dogdictionary.jsp">애견사전</a></li>
@@ -289,7 +269,7 @@
 										</div>
 									</div>
 									<div class="member">
-                                      <button class="label label-primary"	onclick="location='signin.jsp'">Sign up / Sign up</button>
+									<button class="label label-primary"	onclick="location='signin.jsp'">Sign up / Sign up</button>
 									</div>
 								</div>
 							</div>
@@ -305,29 +285,25 @@
 		<!--header-->
 		<!--about-->
 		<div class="about-pg">
-            <h3 style="margin-bottom:30px;">댕댕이 입력정보 카테고리를 선택후 횟수를 추가해주세요~</h3>
+            <h3 style="margin-bottom:30px;">로그인</h3>
 			<section style="position:relative;" class="container_2">
 				<article class="half">
-                   <!--   <div class="tabs">
+                    <div class="tabs">
                         <span class="tab signin active"><a href="#signin">Sign in</a></span>
                         <span class="tab signup"><a href="#signup">Sign up</a></span>
-                    </div>-->
+                    </div>
                     <div class="content">
                         <div class="signin-cont cont">
-                            <form action="../Logic" method="GET" enctype="multipart/form-data">
-                               
-                                		<select class="selectbox" name ="name">
-								            <option value="walk">산책</option>
-								            <option value="snack">간식</option>
-								            <option value="toilet">배변</option>
-								        </select>   
-								        <br>
-								        <br>                             
-                                
-                                <input type="text" name ="dogcount"  id="password" class="inpt" required="required" placeholder="입력한 횟수를 적어주세요">
-                               
-                                <div class="submit-wrap">                                    
-                                    <input type="submit" value="등록" class="submit">                                    
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+                                <label for="email">Your email</label>
+                                <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                                <label for="password">Your password</label>
+                                <input type="checkbox" id="remember" class="checkbox" checked>
+                                <label for="remember">Remember me</label>
+                                <div class="submit-wrap">
+                                    <input type="submit" value="Sign in" class="submit">
+                                    <a href="#" class="more">Forgot your password?</a>
                                 </div>
                             </form>
                         </div>
@@ -373,30 +349,12 @@
         </div>
         <br>
 		<!--about-->
-<div class = "add_calendar">
-    <p>댕댕이 입력정보 카테고리를 선택후 횟수를 추가해주세요~</p>
-
-    <form action="../Logic" method="GET">
-        <select  name ="name">
-            <option value="walk">산책</option>
-            <option value="snack">간식</option>
-            <option value="toilet">배변</option>
-        </select>
-
-        <input type="text" name ="dogcount" placeholder="입력한 횟수를 적어주세요">
-        <br><br>
-        <input type="submit" value="등록">
-    </form>
-
-
-</div>
-
-<!--footer-->
+		<!--footer-->
 		<div class="footer">
 			<div class="container">
 			<div class="col-md-3 mrg1">
 				<div class="logo">
-					<h1><a href="web_page/index.html">Dog<span class="hlf">ument</span></a></h1>
+					<h1><a href="index.html">Dog<span class="hlf">ument</span></a></h1>
 				</div>
 				<div class="clearfix"></div>
 			</div>

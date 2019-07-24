@@ -1,18 +1,15 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>DOGUMENT</title>
+<head>
+
+<title>DOGUMENT</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<!meta charset utf="8">
+		<meta charset utf="8">
 		<!--bootstrap-->
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
@@ -238,9 +235,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         display: none;
         }
         </style>
-	</head>
-	<body>
-		<!--header-part-->
+</head>
+<body>
+	<!--header-part-->
 		<div class="banner-background" id="to-top">
 			<div class="container">
 				<div class="nav-back">
@@ -407,5 +404,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
 		<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 		<!----> 
-	</body>
+</body>
 </html>

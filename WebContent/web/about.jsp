@@ -1,12 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!doctype html>
-<html>
-	<head>
+
 		<title>DOGUMENT</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,14 +17,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!meta charset utf="8">
 		<!--bootstrap-->
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
-		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="web_page/css/style.css" rel="stylesheet" type="text/css"/>
 		<!--script-->
-		<script src="js/jquery-2.1.4.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
+		<script src="web_page/js/jquery-2.1.4.min.js"></script>
+		<script src="web_page/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="web_page/js/move-top.js"></script>
+		<script type="text/javascript" src="web_page/js/easing.js"></script>
 		<!--fonts-->
 		<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -35,9 +38,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			});
 		</script>
-	</head>
-	<body>
-		<!--header-part-->
+		</head>
+<body>
+<!--header-part-->
 		<div class="banner-background" id="to-top">
 			<div class="container">
 				<div class="nav-back">
@@ -56,22 +59,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div style="display:flex; justify-content: space-around;">
 								<div style="display:flex; justify-content: flex-end;">
 									<div class="logo">
-										<h1><a href="index.html">Dog<span class="hlf">ument</span></a></h1>
+										<h1><a href="Main.jsp">Dog<span class="hlf">ument</span></a></h1>
 									</div>
 									<div class="mainmenu">
 										<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 											<ul class="nav navbar-nav">
-												<li><a href="index.html">메인</a></li>
-												<li><a class="active" href="about.html">소개<span class="sr-only">(current)</span></a></li>
-												<li><a href="mypage.html">강아지매니징</a></li>
-												<li><a href="dog.html">애견사전</a></li>
-												<li><a href="board.html">커뮤니티</a></li>
+												<li><a  href="Main.jsp">메인 </a></li>
+												<li><a class="active" href="about.jsp">소개<span class="sr-only">(current)</span></a></li>
+												<li><a href="dogmanaging.jsp">강아지매니징</a></li>
+												<li><a href="dogdictionary.jsp">애견사전</a></li>
+												<li><a href="board.jsp">커뮤니티</a></li>
 											</ul>
 										</div>
 									</div>
 									<div class="member">
-										<h4><a href="signin.html#signin"><span class="label label-primary">Sign in</span></a></h4>
-										<h4><a href="signin.html#signup"><span class="label label-success">Sign up</span></a></h4>
+									<button class="label label-primary"	onclick="location='signin.jsp'">Sign up / Sign up</button>
 									</div>
 								</div>
 							</div>
@@ -100,17 +102,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<br>
 					<div style="padding:0px 10%;" class="abouts">
 						<div class="about A">
-							<img style="padding:30px;" src="./images/013-checklist-1.png" alt="pet" class="img-responsive">
+							<img style="padding:30px;" src="web_page/images/013-checklist-1.png" alt="pet" class="img-responsive">
 							<br>
 							<h4>견종별 맞춤 정보</h4>
 						</div>
 						<div class="about B">
-							<img style="padding:30px;" src="./images/008-network.png" alt="pet" class="img-responsive">
+							<img style="padding:30px;" src="web_page/images/008-network.png" alt="pet" class="img-responsive">
 							<br>
 							<h4>가족들과 공유</h4>
 						</div>
 						<div class="about C">
-							<img style="padding-bottom:20px;" src="./images/012-account.png" alt="pet" class="img-responsive">
+							<img style="padding-bottom:20px;" src="web_page/images/012-account.png" alt="pet" class="img-responsive">
 							<br>
 							<h4>인증된 펫시터들</h4>
 						</div>
@@ -130,7 +132,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="abouts">
 						<div class="about A">
 							<div class="mainImg">
-								<img src="./images/dog_mng.jpg" alt="pet" class="img-responsive">
+								<img src="web_page/images/dog_mng.jpg" alt="pet" class="img-responsive">
 							</div>
 						</div>
 						<div class="about B">
@@ -151,27 +153,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<br>
 					<div class="teams">
 						<div class="team A">
-							<img src="./images/t_1.jpg" alt="" title="" class="img-responsive" />
+							<img src="web_page/images/t_1.jpg" alt="" title="" class="img-responsive" />
 							<br>
 							<h3>Name</h3>
 						</div>
 						<div class="team B">
-							<img src="./images/t_2.jpg" alt="" title="" class="img-responsive" />
+							<img src="web_page/images/t_2.jpg" alt="" title="" class="img-responsive" />
 							<br>
 							<h3>Name</h3>
 						</div>
 						<div class="team C">
-							<img src="./images/t_3.jpg" alt="" title="" class="img-responsive" />
+							<img src="web_page/images/t_3.jpg" alt="" title="" class="img-responsive" />
 							<br>
 							<h3>Name</h3>
 						</div>
 						<div class="team D">
-							<img src="./images/t_4.jpg" alt="" title="" class="img-responsive" />
+							<img src="web_page/images/t_4.jpg" alt="" title="" class="img-responsive" />
 							<br>
 							<h3>Name</h3>
 						</div>
 						<div class="team E">
-							<img src="./images/t_5.jpg" alt="" title="" class="img-responsive" />
+							<img src="web_page/images/t_5.jpg" alt="" title="" class="img-responsive" />
 							<br>
 							<h3>Name</h3>
 						</div>
@@ -238,3 +240,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!----> 
 	</body>
 </html>
+</body>
+</html>
+

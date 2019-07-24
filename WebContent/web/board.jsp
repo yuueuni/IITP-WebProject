@@ -74,9 +74,9 @@
 										<ul class="nav navbar-nav">
 											<li><a  href="Main.jsp">메인 </a></li>
 											<li><a href="about.jsp">소개</a></li>
-											<li><a class="active" href="dogmanaging.jsp">강아지매니징<span class="sr-only">(current)</span></a></li>
-											<li><a  href="dogdictionary.jsp">애견사전</a></li>
-											<li><a href="board.jsp">커뮤니티</a></li>
+											<li><a href="dogmanaging.jsp">강아지매니징</a></li>
+											<li><a href="dogdictionary.jsp">애견사전</a></li>
+											<li><a class="active" href="board.jsp">커뮤니티<span class="sr-only">(current)</span></a></li>
 										</ul>
 									</div>
 								</div>
@@ -109,7 +109,7 @@
 			<br>
 			<br>
 				<div class="mainTxt">
-					<h1>강아지 매니징</h1>
+					<h1>커뮤니티 게시판</h1>
 					<br>
 				</div>
 				
