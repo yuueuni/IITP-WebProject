@@ -8,16 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Twitter Bootstrap jQuery Calendar component</title>
+    <title>강아지매니징</title>
 
     <meta name="description" content="Full view calendar component for twitter bootstrap with year, month, week, day views.">
     <meta name="keywords" content="jQuery,Bootstrap,Calendar,HTML,CSS,JavaScript,responsive,month,week,year,day">
     <meta name="author" content="Serhioromano">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="components/bootstrap2/css/bootstrap.css">
-    <link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="webProject/components/bootstrap2/css/bootstrap.css">
+    <link rel="stylesheet" href="webProject/components/bootstrap2/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="webProject/css/calendar.css">
 
     <style type="text/css">
       .btn-twitter {
@@ -31,9 +31,8 @@
     </style>
     <title>$Title$</title>
   </head>
-  <body>
-  $END$
-
+  <body ng-controller="testCtrl">
+  
   <div class="container">
   <div class="hero-unit">
     <h1>Bootstrap Calendar Demo</h1>
@@ -41,8 +40,9 @@
     <p>Bootstrap based full view calendar. Template based.</p>
 
     <a class="btn btn-inverse" href="https://github.com/Serhioromano/bootstrap-calendar">Fork on GitHub</a>
-    <a class="btn" href="index-bs3.html">Use bootstrap 3</a>
+    <a class="btn" href="webProject/index-bs3.html">Use bootstrap 3</a>
     <a href="https://twitter.com/serhioromano" class="btn btn-twitter" data-show-count="false" data-size="large">Follow @serhioromano</a>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
     </script>
   </div>
@@ -152,36 +152,36 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
-  <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
-  <script type="text/javascript" src="js/language/bg-BG.js"></script>
-  <script type="text/javascript" src="js/language/nl-NL.js"></script>
-  <script type="text/javascript" src="js/language/fr-FR.js"></script>
-  <script type="text/javascript" src="js/language/de-DE.js"></script>
-  <script type="text/javascript" src="js/language/el-GR.js"></script>
-  <script type="text/javascript" src="js/language/it-IT.js"></script>
-  <script type="text/javascript" src="js/language/hu-HU.js"></script>
-  <script type="text/javascript" src="js/language/pl-PL.js"></script>
-  <script type="text/javascript" src="js/language/pt-BR.js"></script>
-  <script type="text/javascript" src="js/language/ro-RO.js"></script>
-  <script type="text/javascript" src="js/language/es-CO.js"></script>
-  <script type="text/javascript" src="js/language/es-MX.js"></script>
-  <script type="text/javascript" src="js/language/es-ES.js"></script>
-  <script type="text/javascript" src="js/language/es-CL.js"></script>
-  <script type="text/javascript" src="js/language/es-DO.js"></script>
-  <script type="text/javascript" src="js/language/ru-RU.js"></script>
-  <script type="text/javascript" src="js/language/sk-SR.js"></script>
-  <script type="text/javascript" src="js/language/sv-SE.js"></script>
-  <script type="text/javascript" src="js/language/zh-CN.js"></script>
-  <script type="text/javascript" src="js/language/cs-CZ.js"></script>
-  <script type="text/javascript" src="js/language/ko-KR.js"></script>
-  <script type="text/javascript" src="js/language/zh-TW.js"></script>
-  <script type="text/javascript" src="js/language/id-ID.js"></script>
-  <script type="text/javascript" src="js/language/th-TH.js"></script>
-  <script type="text/javascript" src="js/calendar.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="webProject/components/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="webProject/components/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="webProject/components/bootstrap2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="webProject/components/jstimezonedetect/jstz.min.js"></script>
+  <script type="text/javascript" src="webProject/js/language/bg-BG.js"></script>
+  <script type="text/javascript" src="webProject/js/language/nl-NL.js"></script>
+  <script type="text/javascript" src="webProject/js/language/fr-FR.js"></script>
+  <script type="text/javascript" src="webProject/js/language/de-DE.js"></script>
+  <script type="text/javascript" src="webProject/js/language/el-GR.js"></script>
+  <script type="text/javascript" src="webProject/js/language/it-IT.js"></script>
+  <script type="text/javascript" src="webProject/js/language/hu-HU.js"></script>
+  <script type="text/javascript" src="webProject/js/language/pl-PL.js"></script>
+  <script type="text/javascript" src="webProject/js/language/pt-BR.js"></script>
+  <script type="text/javascript" src="webProject/js/language/ro-RO.js"></script>
+  <script type="text/javascript" src="webProject/js/language/es-CO.js"></script>
+  <script type="text/javascript" src="webProject/js/language/es-MX.js"></script>
+  <script type="text/javascript" src="webProject/js/language/es-ES.js"></script>
+  <script type="text/javascript" src="webProject/js/language/es-CL.js"></script>
+  <script type="text/javascript" src="webProject/js/language/es-DO.js"></script>
+  <script type="text/javascript" src="webProject/js/language/ru-RU.js"></script>
+  <script type="text/javascript" src="webProject/js/language/sk-SR.js"></script>
+  <script type="text/javascript" src="webProject/js/language/sv-SE.js"></script>
+  <script type="text/javascript" src="webProject/js/language/zh-CN.js"></script>
+  <script type="text/javascript" src="webProject/js/language/cs-CZ.js"></script>
+  <script type="text/javascript" src="webProject/js/language/ko-KR.js"></script>
+  <script type="text/javascript" src="webProject/js/language/zh-TW.js"></script>
+  <script type="text/javascript" src="webProject/js/language/id-ID.js"></script>
+  <script type="text/javascript" src="webProject/js/language/th-TH.js"></script>
+  <script type="text/javascript" src="webProject/js/calendar.js"></script>
+  <script type="text/javascript" src="webProject/js/app.js"></script>
 
   <script type="text/javascript">
     var disqus_shortname = 'bootstrapcalendar'; // required: replace example with your forum shortname
@@ -189,8 +189,8 @@
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+    })();   
   </script>
-  </div>
+ 
   </body>
 </html>

@@ -91,7 +91,7 @@ public class CalendarDAO {
 
                 // Column
                 // PK , name , email , password
-                String sql = "INSERT INTO calendar(id,name,dogcount,url,datetime,datetime_end,status) VALUES (4,?,?,?,now(),now(),'123');";
+                String sql = "INSERT INTO calendar(id,name,dogcount,url,datetime,datetime_end,status) VALUES (5,?,?,?,now(),now(),'123');";
                 pstmt = conn.prepareStatement(sql);
 
                 //pstmt.setInt(1,vo.getId());

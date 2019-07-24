@@ -8,13 +8,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+			
+		
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!meta charset utf="8">
+		
+		
 		<!--bootstrap-->
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<!--script-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/move-top.js"></script>
@@ -92,10 +97,16 @@
 						<h1>반려동물의 모습을 기록하세요?..?</h1>
 						<br>
 					</div>
-					<div class="mainBtn">
-						<h2><a href="#"><span class="label label-danger">강아지 등록하기</span></a></h2>
+					
+					
+					<div class="mainBtn">						
+						<button class="label label-danger" onclick="location='../doginput.jsp'">강아지 등록하기</button>
 						<br>
 					</div>
+					
+					
+					
+					
 				</div>
 				<div class="clearfix"></div>
 				<br>

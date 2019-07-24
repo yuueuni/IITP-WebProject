@@ -1,24 +1,13 @@
 (function($) {
 
 	"use strict";
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth()+1;
-	var yyyy = today.getFullYear();
-	if(dd<10){
-		dd='0'+dd;
-	}
-	if(mm<10){
-		mm='0'+mm;
-	}
-	var c = yyyy+'-'+mm+'-'+dd;
 
 	var options = {
 		events_source: 'events.json.php',
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,
-		day: todayis,
+		day: '2013-03-12',
 		onAfterEventsLoad: function(events) {
 			if(!events) {
 				return;
@@ -43,7 +32,6 @@
 			}
 		}
 	};
-
 
 	var calendar = $('#calendar').calendar(options);
 
