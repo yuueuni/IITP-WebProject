@@ -155,27 +155,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="team A">
 							<img src="web_page/images/t_1.jpg" alt="" title="" class="img-responsive" />
 							<br>
-							<h3>Name</h3>
+							<h3>유은</h3>
 						</div>
 						<div class="team B">
 							<img src="web_page/images/t_2.jpg" alt="" title="" class="img-responsive" />
 							<br>
-							<h3>Name</h3>
+							<h3>태영</h3>
 						</div>
 						<div class="team C">
 							<img src="web_page/images/t_3.jpg" alt="" title="" class="img-responsive" />
 							<br>
-							<h3>Name</h3>
+							<h3>정희</h3>
 						</div>
 						<div class="team D">
 							<img src="web_page/images/t_4.jpg" alt="" title="" class="img-responsive" />
 							<br>
-							<h3>Name</h3>
+							<h3>한글</h3>
 						</div>
 						<div class="team E">
 							<img src="web_page/images/t_5.jpg" alt="" title="" class="img-responsive" />
 							<br>
-							<h3>Name</h3>
+							<h3>유찬</h3>
 						</div>
 					</div>
 					<div class="clearfix"></div>

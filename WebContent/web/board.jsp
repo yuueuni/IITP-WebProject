@@ -96,32 +96,17 @@
 	</div>
 	<!--header-->
 	<!--about-->
-	<div class="main-content">
+	<div class="about-pg">
+		<h3>커뮤니티 게시판</h3>
 		<div class="container">
-			<div class="m-content">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-				<div class="mainTxt">
-					<h1>커뮤니티 게시판</h1>
-					<br>
+			<div class="m-content">			
+				<div class="mainImg">
+					<img src="web_page/images/fixing.PNG">
 				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				<div style="font-family: 'NanumBarunGothicBold';" class="mainTxt">
+					<h3>빠른 시일내에 찾아뵙겠습니다.&#128520;</h3>
+				</div>
+			
 			</div>
 			<div class="clearfix"></div>
 			<br>

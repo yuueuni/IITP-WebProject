@@ -68,6 +68,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               <h1><a href="Main.jsp">Dog<span class="hlf">ument</span></a></h1>
                            </div>
                            <div class="mainmenu">
+                           
+                           
+                           
                               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                  <ul class="nav navbar-nav">
                                     <li><a href="Main.jsp">메인 </a></li>

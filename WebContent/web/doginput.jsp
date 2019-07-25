@@ -280,7 +280,7 @@
 									<div class="mainmenu">
 										<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 											<ul class="nav navbar-nav">
-												<<li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
+												<li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
 												<li><a href="about.jsp">소개</a></li>
 												<li><a href="dogmanaging.jsp">강아지매니징</a></li>
 												<li><a href="dogdictionary.jsp">애견사전</a></li>

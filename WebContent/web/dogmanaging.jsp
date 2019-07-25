@@ -21,17 +21,23 @@
 <link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <!--coustom css-->
 <link href="web_page/css/style.css" rel="stylesheet" type="text/css" />
+
+<!-- calendar -->
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="Calendar/dist/equinox.css" rel="stylesheet" type="text/css">
+
+
 <!--script-->
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="web_page/js/jquery-2.1.4.min.js"></script>
 <script src="web_page/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="web_page/js/move-top.js"></script>
 <script type="text/javascript" src="web_page/js/easing.js"></script>
+
 <!--fonts-->
 <link	href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700'	rel='stylesheet' type='text/css'>
 <link	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'	rel='stylesheet' type='text/css'>
-<!--script-->
-<script type="text/javascript">
+<script>
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event) {
 			event.preventDefault();
@@ -41,9 +47,10 @@
 		});
 	});
 </script>
+
 </head>
 <body>
-	<!--header-part-->
+	<!--header-part-->	
 	<div class="banner-background" id="to-top">
 		<div class="container">
 			<div class="nav-back">
@@ -95,41 +102,73 @@
 		</div>
 	</div>
 	<!--header-->
+		<!-- calendar -->
 	<!--about-->
-	<div class="main-content">
-		<div class="container">
-			<div class="m-content">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-				<div class="mainTxt">
-					<h1>강아지 매니징</h1>
-					<br>
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			<div class="clearfix"></div>
-			<br>
-		</div>
-	</div>
 	<!--about-->
+      <div class="about-pg">
+         <h3>강아지 매니징</h3>
+         <br>
+         <div class="container">
+            <br>
+            <h4>산책 시간</h4>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <div id="chart_div"></div>
+           		<div class="clearfix"></div>
+           		
+	         	<div class="jquery-script-clear"></div>
+				<div class="event-calendar"></div>
+         </div>
+
+      </div>
+      	<div class="clearfix"></div>
+      	
+      <br>
+      <script>
+      
+      google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+
+      data.addRows([
+        [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+        [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+        [66, 70], [67, 72], [68, 75], [69, 80]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Day'
+        },
+        vAxis: {
+          title: 'Time'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+      
+</script>
+      <!--about-->
+	
 	<!--footer-->
 	<div class="footer">
+	
 		<div class="container">
 			<div class="col-md-3 mrg1">
 				<div class="logo">
@@ -187,9 +226,53 @@
 				easingType : 'easeOutQuart'
 			});
 		});
+	
 	</script>
+	
+<script src="web_page/js/chart.js"></script>
 	<a href="#to-top" id="toTop" style="display: block;"> <span
 		id="toTopHover" style="opacity: 1;"> </span></a>
-	<!---->
+<!-- calendar -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+<script src="Calendar/dist/equinox.min.js"></script>
+<script>
+$('.event-calendar').equinox({
+	events: [{
+		start: '2018-04-20 17:30',
+		end: '2018-04-22 17:30',
+		title: 'jQueryScript.Net',
+		url: '#',
+		class1: '',
+		color: '#000',
+		data: {}}],
+	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>
