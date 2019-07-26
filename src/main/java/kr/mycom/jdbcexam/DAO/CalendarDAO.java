@@ -24,7 +24,7 @@ public class CalendarDAO {
     }
 
 
-    public void getCalendar() throws SQLException, ClassNotFoundException {
+    public CalendarVO getCalendar() throws SQLException, ClassNotFoundException {
     	
         CalendarVO calendar = null;
         Connection conn = null;
@@ -46,7 +46,8 @@ public class CalendarDAO {
                 String status = rs.getString("status");
                 String url = rs.getString("url");
            
-                calendar = new CalendarVO(id, name, dogcount, url, datetime, datetime_end, status);
+                //calendar = new CalendarVO(id, name, dogcount, url, datetime, datetime_end, status);
+                calendar.setDogcount(dogcount);
                 System.out.println(calendar);
             }
         } catch (Exception e) {
@@ -75,7 +76,7 @@ public class CalendarDAO {
             }
         }
 	
-    	
+    	return calendar;
        
     }
 

@@ -1,6 +1,8 @@
 package main.java.kr.mycom.jdbcexam.DogServlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,9 +38,6 @@ public class DogServlet extends HttpServlet {
     	CalendarDAO dao = new CalendarDAO();
     	
     	dao.insertCalendar(vo);
-    	
-    	//Making JSON
-    	
     	
     	
     	response.sendRedirect("web/dogmanaging.jsp");

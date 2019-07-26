@@ -1,448 +1,217 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jeongheekim
-  Date: 2019-07-21
-  Time: 20:08
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-   <title>DOGUMENT</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<!meta charset utf="8">
-		<!--bootstrap-->
-		<link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<!--coustom css-->
-		<link href="web_page/css/style.css" rel="stylesheet" type="text/css"/>
-		<!--script-->
-		<script src="web_page/js/jquery-2.1.4.min.js"></script>
-		<script src="web_page/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="web_page/js/move-top.js"></script>
-		<script type="text/javascript" src="web_page/js/easing.js"></script>
-		<!--fonts-->
-		<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700;" rel="stylesheet" type='text/css'>
-		<!--script-->
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-				});
-			});
-        </script>
-        <style>
-     	.selectbox{
-        width: 200px;
-		padding: .8em .5em;
-		border: 1px solid #999;
-		font-family: inherit;
-		background: url('arrow.jpg') no-repeat 95% 50%;
-		border-radius: 0px;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		}
+<meta charset="UTF-8">
+<title>DOGUMENT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+   content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 
-		selectbox::-ms-expand {
-    		display: none;
-		}
-        .container_2 .half {
-            float: none;
-            height: 100%;
-            padding: 0px 300px 0;
-            margin:0px 300px;
-        }
-        .container_2 h1 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 23px;
-            text-align: center;
-            text-indent: 6px;
-            letter-spacing: 7px;
-            text-transform: uppercase;
-            color: #263238;
-        }
-        body .container_2 .tabs {
-            width: 100%;
-            margin-bottom: 29px;
-            border-bottom: 1px solid #d9d9d9;
-        }
-        body .container_2 .tabs .tab {
-            display: inline-block;
-            margin-bottom: -1px;
-            padding: 20px 15px 10px;
-            cursor: pointer;
-            letter-spacing: 0;
-            border-bottom: 1px solid #d9d9d9;
-            -moz-user-select: -moz-none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
-            transition: all 0.1s ease-in-out;
-        }
-        body .container_2 .tabs .tab a {
-            font-size: 11px;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #d9d9d9;
-            transition: all 0.1s ease-in-out;
-        }
-        body .container_2 .tabs .tab.active a, body .container_2 .tabs .tab:hover a {
-        color: #263238;
-        }
-        body .container_2 .tabs .tab.active {
-        border-bottom: 1px solid #263238;
-        }
-        body .container_2 .content form {
-        position: relative;
-        height: 287px;
-        }
-        body .contcontainer_2ainer .content label:first-of-type, body .container_2 .content input:first-of-type, body .container_2 .content .more:first-of-type {
-        -moz-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
-        -webkit-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
-        animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
-        }
-        body .container_2 .content label:nth-of-type(2), body .container_2 .content input:nth-of-type(2), body .container_2 .content .more:nth-of-type(2) {
-        -moz-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
-        -webkit-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
-        animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
-        }
-        body .container_2 .content label:nth-of-type(3), body .container_2 .content input:nth-of-type(3), body .container_2 .content .more:nth-of-type(3) {
-        -moz-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
-        -webkit-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
-        animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
-        }
-        body .container_2 .content label {
-        font-size: 12px;
-        color: #263238;
-        -moz-user-select: -moz-none;
-        -ms-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        }
-        body .container_2 .content label:not([for='remember']) {
-        display: none;
-        }
-        body .container_2 .content input.inpt {
-        font-size: 14px;
-        display: block;
-        width: 100%;
-        height: 42px;
-        margin-bottom: 12px;
-        padding: 16px 13px;
-        color: #999999;
-        border: 1px solid #d9d9d9;
-        background: transparent;
-        -moz-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        }
-        body .container_2 .content input.inpt::-webkit-input-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-family: 'Lato', sans-serif;
-        }
-        body .container_2 .content input.inpt:-moz-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-family: 'Lato', sans-serif;
-        }
-        body .container_2 .content input.inpt::-moz-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-family: 'Lato', sans-serif;
-        }
-        body .container_2 .content input.inpt:-ms-input-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-family: 'Lato', sans-serif;
-        }
-        body .container_2 .content input.inpt:focus {
-        border-color: #999999;
-        }
-        body .container_2 .content input.submit {
-        font-size: 12px;
-        line-height: 42px;
-        display: block;
-        width: 100%;
-        height: 42px;
-        cursor: pointer;
-        vertical-align: middle;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #263238;
-        border: 1px solid #263238;
-        background: transparent;
-        -moz-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        }
-        body .container_2 .content input.submit:hover {
-        background-color: #263238;
-        color: #ffffff;
-        -moz-transition: all 0.2s;
-        -o-transition: all 0.2s;
-        -webkit-transition: all 0.2s;
-        transition: all 0.2s;
-        }
-        body .container_2 .content input:focus {
-        outline: none;
-        }
-        body .container_2 .content .checkbox {
-        margin-top: 4px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        width: 0;
-        height: 0;
-        margin: 17px -1px;
-        padding: 0;
-        border: 0;
-        }
-        body .container_2 .content .checkbox + label {
-        vertical-align: middle;
-        display: inline-block;
-        width: 50%;
-        }
-        body .container_2 .content .checkbox + label:before {
-        content: "\A";
-        color: #999999;
-        font-family: Verdana;
-        font-weight: bold;
-        font-size: 8px;
-        line-height: 10px;
-        text-align: center;
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
-        -moz-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        background: transparent;
-        border: 1px solid #d9d9d9;
-        width: 11px;
-        height: 11px;
-        margin: -2px 8px 0 0;
-        }
-        body .container_2 .content .checkbox:checked + label:before {
-        content: "✓";
-        }
-        body .container_2 .content .submit-wrap {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        }
-        body .container_2 .content .submit-wrap a {
-        font-size: 12px;
-        display: block;
-        margin-top: 20px;
-        text-align: center;
-        text-decoration: none;
-        color: #999999;
-        }
-        body .container_2 .content .submit-wrap a:hover {
-        text-decoration: underline;
-        }
-        body .container_2 .content .signup-cont {
-        display: none;
-        }
-        
-        </style>
+
+<script type="application/x-javascript">      
+    addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
+<!meta charset utf="8">
+
+
+<!--bootstrap-->
+<link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!--coustom css-->
+<link href="web_page/css/style.css" rel="stylesheet" type="text/css" />
+<!--script-->
+<script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="web_page/js/jquery-2.1.4.min.js"></script>
+<script src="web_page/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="web_page/js/move-top.js"></script>
+<script type="text/javascript" src="web_page/js/easing.js"></script>
+<!--fonts-->
+<link   href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700'   rel='stylesheet' type='text/css'>
+<link   href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'   rel='stylesheet' type='text/css'>
+<!--script-->
+<script type="text/javascript">
+   jQuery(document).ready(function($) {
+      $(".scroll").click(function(event) {
+         event.preventDefault();
+         $('html,body').animate({
+            scrollTop : $(this.hash).offset().top
+         }, 900);
+      });
+   });
+</script>
 </head>
 <body>
-<!--header-part-->
-		<div class="banner-background" id="to-top">
-			<div class="container">
-				<div class="nav-back">
-					<div class="navigation">
-						<nav class="navbar navbar-default">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-							  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							  </button>
-							</div>
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div style="display:flex; justify-content: space-around;">
-								<div style="display:flex; justify-content: flex-end;">
-									<div class="logo">
-										<h1><a href="Main.jsp">Dog<span class="hlf">ument</span></a></h1>
-									</div>
-									<div class="mainmenu">
-										<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-											<ul class="nav navbar-nav">
-												<li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
-												<li><a href="about.jsp">소개</a></li>
-												<li><a href="dogmanaging.jsp">강아지매니징</a></li>
-												<li><a href="dogdictionary.jsp">애견사전</a></li>
-												<li><a href="board.jsp">커뮤니티</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="member">
-                                      <button class="label label-primary"	onclick="location='signin.jsp'">Sign up / Sign up</button>
-									</div>
-								</div>
-							</div>
-							<!-- /.navbar-collapse -->
-								<div class="clearfix"></div>	
-							<div class="clearfix"></div>
-						</nav>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--header-->
-		<!--about-->
-		<div class="about-pg">
-            <h3 style="margin-bottom:30px;">댕댕이 입력정보 카테고리를 선택후 횟수를 추가해주세요~</h3>
-			<section style="position:relative;" class="container_2">
-				<article class="half">
-                   <!--   <div class="tabs">
-                        <span class="tab signin active"><a href="#signin">Sign in</a></span>
-                        <span class="tab signup"><a href="#signup">Sign up</a></span>
-                    </div>-->
-                    <div class="content">
-                        <div class="signin-cont cont">
-                            <form action="../Logic" method="GET" enctype="multipart/form-data">
-                               
-                                		<select class="selectbox" name ="name">
-								            <option value="walk">산책</option>
-								            <option value="snack">간식</option>
-								            <option value="toilet">배변</option>
-								        </select>   
-								        <br>
-								        <br>                             
-                                
-                                <input type="text" name ="dogcount"  id="password" class="inpt" required="required" placeholder="입력한 횟수를 적어주세요">
-                               
-                                <div class="submit-wrap">                                    
-                                    <input type="submit" value="등록" class="submit">                                    
-                                </div>
-                            </form>
+   <!--header-part-->
+   <div class="banner-background" id="to-top">
+      <div class="container">
+         <div class="nav-back">
+            <div class="navigation">
+               <nav class="navbar navbar-default">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span> <span
+                           class="icon-bar"></span> <span class="icon-bar"></span> <span
+                           class="icon-bar"></span>
+                     </button>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div>
+                     <div style="display: flex; justify-content: space-around;">
+                        <div class="logo">
+                           <h1>
+                              <a href="Main.jsp">Dog<span class="hlf">ument</span></a>
+                           </h1>
                         </div>
-                        <div class="signup-cont cont">
-                            <form action="#" method="post" enctype="multipart/form-data">
-                            <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
-                            <label for="name">Your name</label>
-						    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-                            <label for="email">Your email</label>
-                            <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                            <label for="password">Your password</label>
-                                <div class="submit-wrap">
-                                    <input type="submit" value="Sign up" class="submit">
-                                    <a href="#" class="more">Terms and conditions</a>
-                                </div>
-							</form>
-				        </div>
-					</div>
-				</article>
-		    </section>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-            <script type="text/javascript">
-            $('.tabs .tab').click(function(){
-            if ($(this).hasClass('signin')) {
-                $('.tabs .tab').removeClass('active');
-                $(this).addClass('active');
-                $('.cont').hide();
-                $('.signin-cont').show();
-            } 
-            if ($(this).hasClass('signup')) {
-                $('.tabs .tab').removeClass('active');
-                $(this).addClass('active');
-                $('.cont').hide();
-                $('.signup-cont').show();
-            }
-            });
-            $('.container .bg').mousemove(function(e){
-                var amountMovedX = (e.pageX * -1 / 30);
-                var amountMovedY = (e.pageY * -1 / 9);
-                $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
-            });
-            </script>
+                        <div class="mainmenu">
+                           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                              <ul class="nav navbar-nav">
+                                 <li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
+                                 <li><a href="about.jsp">소개</a></li>
+                                 <li><a href="dogmanaging.jsp">강아지매니징</a></li>
+                                 <li><a href="dogdictionary.jsp">애견사전</a></li>
+                                 <li><a href="board.jsp">커뮤니티</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div>
+                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in / Sign up</h4></button>
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+    <!--header-->
+    <div class="about-pg">
+        <h3>강아지 등록</h3>
+         </div>
+         
+            <form action="" method="post" enctype="multipart/form-data" name="">
+                
+        
+        <div style="text-align:center;" class="content">
+            <fieldset style="margin:0px 300px;">
+            
+          <input type="file" name="FileName">
+
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="dogname" value="" /></td>
+                </tr>
+                <hr>
+                <tr>
+                    <th>몸무게</th>
+                    <td><input type="text" name="weight" value="" /></td>
+                </tr>
+                <hr>
+                <tr>
+                    <th>나이</th>
+                    <td><input type="text" name="age" min="1" max="200" value="" /></td>
+                </tr>
+                <hr>
+                <tr>
+                    <th>지역</th>
+                    <td><input type="text" name="location" value="" /></td>
+                </tr>
+                <hr>
+                <tr>
+                    <th>특이사항</th>
+                    <td><input type="text" name="note" value="" /></td>
+                </tr>
+                <hr>
+                <tr>
+                    <th>견종</th>
+                    <select name="dogtype">
+                        <option value="믹스견">믹스견</option>
+                        <option value="보더콜리d">보더콜리</option>
+                        <option value="골든 리트리버" selected>골든 리트리버</option>
+                        <option value="푸들">푸들</option>
+                        <option value="닥스훈트">닥스훈트</option>
+                    </select>
+                </tr>      
+            </fieldset>
+            </div>
+            </form>
+            <hr>
+            <nav style="text-align: center;">
+                    <div class="submit-wrap">                                    
+                          <input type="submit" value="등록" >                                    
+                    </div>
+                </nav>
+            <br>
         </div>
-        <br>
-		<!--about-->
-<div class = "add_calendar">
-    <p>댕댕이 입력정보 카테고리를 선택후 횟수를 추가해주세요~</p>
-
-    <form action="../Logic" method="GET">
-        <select  name ="name">
-            <option value="walk">산책</option>
-            <option value="snack">간식</option>
-            <option value="toilet">배변</option>
-        </select>
-
-        <input type="text" name ="dogcount" placeholder="입력한 횟수를 적어주세요">
-        <br><br>
-        <input type="submit" value="등록">
-    </form>
-
-
-</div>
-
-<!--footer-->
-		<div class="footer">
-			<div class="container">
-			<div class="col-md-3 mrg1">
-				<div class="logo">
-					<h1><a href="web_page/index.html">Dog<span class="hlf">ument</span></a></h1>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="col-md-3 mrg1">
-				<br>
-				<div style="color:gray; padding-top:8px;">
-					<h5><a href="#">개인정보취급방침</a><a href="#"> 이용약관</a></h5>
-				</div>
-			</div>
-			<div class="col-md-3 brk5">
-				<div class="follow-us">
-					<h4>FOLLOW US</h4>
-					<ul>
-						<li><a href="#" class="fb"></a></li>
-						<li><a href="#" class="twt"></a></li>
-						<li><a href="#" class="gpls"></a></li>
-						<li><a href="#" class="pint"></a></li>
-						<li><a href="#" class="lnkdin"></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-3 brk5">
-				<div class="copy-rt">
-					<h4>COPYRIGHT</h4>
-					<p>Pet Kennel &#169 2015 Design by <a href="http://www.w3layouts.com" target="_blank">w3layouts</a></p>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			</div>
-		</div>
-		<!--footer-->
-		<!---->
-		<script type="text/javascript">
+   
+   <!--services-->
+   <!--footer-->
+   <div class="footer">
+      <div class="container">
+         <div class="col-md-3 mrg1">
+            <div class="logo">
+               <h1>
+                  <a href="index.html">Dog<span class="hlf">ument</span></a>
+               </h1>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+         <div class="col-md-3 mrg1">
+            <br>
+            <div style="color: gray; padding-top: 8px;">
+               <h5>
+                  <a href="#">개인정보취급방침</a><a href="#"> 이용약관</a>
+               </h5>
+            </div>
+         </div>
+         <div class="col-md-3 brk5">
+            <div class="follow-us">
+               <h4>FOLLOW US</h4>
+               <ul>
+                  <li><a href="#" class="fb"></a></li>
+                  <li><a href="#" class="twt"></a></li>
+                  <li><a href="#" class="gpls"></a></li>
+                  <li><a href="#" class="pint"></a></li>
+                  <li><a href="#" class="lnkdin"></a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-md-3 brk5">
+            <div class="copy-rt">
+               <h4>COPYRIGHT</h4>
+               <p>
+                  Pet Kennel &#169 2015 Design by <a href="http://www.w3layouts.com"
+                     target="_blank">w3layouts</a>
+               </p>
+            </div>
+         </div>
+         <div class="clearfix"></div>
+      </div>
+   </div>
+   <!--footer-->
+   <!---->
+   <script type="text/javascript">
             $(document).ready(function() {
-                    /*
-                    var defaults = {
-                    containerID: 'toTop', // fading element id
-                    containerHoverID: 'toTopHover', // fading element hover id
-                    scrollSpeed: 1200,
-                    easingType: 'linear' 
-                    };
-                    */
+                  /*
+                  var defaults = {
+                  containerID: 'toTop', // fading element id
+                  containerHoverID: 'toTopHover', // fading element hover id
+                  scrollSpeed: 1200,
+                  easingType: 'linear' 
+                  };
+                  */
             $().UItoTop({ easingType: 'easeOutQuart' });
-		});
-		</script>
-		<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-		<!----> 
-	</body>
+      });
+      </script>
+   <a href="#to-top" id="toTop" style="display: block;"> <span
+      id="toTopHover" style="opacity: 1;"> </span></a>
+   <!---->
+
+</body>
 </html>
