@@ -14,7 +14,7 @@ public class CalendarVO {
     public CalendarVO() {
     }
 
-    public CalendarVO(Integer id, String name,String dogcount, String url, Date datetime, Date datetime_end, String status) {
+    public CalendarVO(Integer id, String name, String dogcount, String url, Date datetime, Date datetime_end, String status) {
         this.id = id;
         this.name = name;
         this.url = url;
