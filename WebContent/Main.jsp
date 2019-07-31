@@ -74,7 +74,7 @@
                                  <li><a href="about.jsp">소개</a></li>
                                  <li><a href="dogmanaging.jsp">강아지매니징</a></li>
                                  <li><a href="dogdictionary.jsp">애견사전</a></li>
-                                 <li><a href="board.jsp">커뮤니티</a></li>
+                                 <li><a href="bbs.jsp">커뮤니티</a></li>
                               </ul>
                            </div>
                         </div>
@@ -98,43 +98,18 @@
                <img style="width: 1100px;" src="web_page//images/main_2.jpg" alt="main"class="img-responsive">
             </div>
             <div class="mainTxt">
-               <h1>반려동물의 모습을 기록하세요</h1>
+               <h1>반려동물의 모습을 기록하세요.</h1>
                <br>
             </div>
-            <div class="mainBtn">
-<%
-         if (session.getAttribute("userID") != null) {
-%>
-         <button class="label label-danger" onclick="location='doginput.jsp'">강아지 등록하기</button>
-<%
-         } else {
-%>
-         <button class="label label-danger" onclick="if(confirm('로그인이 필요합니다.'))location.href='signin.jsp';">강아지 등록하기</button>
-<%
-         }
-%>      
-               
-               
-               <br>
-            </div>
-            
-            
+            <div class="mainBtn">        
+
+         <button class="label label-danger" onclick="location='NewDogEnroll.jsp'">강아지 등록하기</button>     
+          <br>
+            </div>        
             
             <div style="top:40%;" class="mainBtn">
-<%
-         if (session.getAttribute("userID") != null) {
-%>
-         <button class="label label-danger" onclick="location='doginput.jsp'">강아지 일정 등록</button>
-<%
-         } else {
-%>
-         <button class="label label-danger" onclick="if(confirm('로그인이 필요합니다.'))location.href='signin.jsp';">강아지 일정 등록</button>
-<%
-         }
-%>   
-               
-               
-               <br>
+         <button class="label label-danger" onclick="if(confirm('로그인이 필요합니다.'))location.href='signin.jsp';">강아지 일정 등록</button>    
+             <br>
             </div>
          </div>
          <div class="clearfix"></div>

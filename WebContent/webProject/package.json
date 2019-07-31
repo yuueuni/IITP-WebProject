@@ -2,7 +2,7 @@
   "name": "bootstrap-calendar",
   "version": "0.2.5",
   "description": "Calendar module based on Bootsrap and jQuery",
-  "main": "js/calendar.js",
+  "main": "./js/calendar.js",
   "dependencies": {
     "bower": "^0.8.5",
     "grunt": "^0.4.1",

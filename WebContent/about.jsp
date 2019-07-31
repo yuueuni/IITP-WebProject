@@ -68,11 +68,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="mainmenu">
                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav">
-                                 <li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
-                                 <li><a href="about.jsp">소개</a></li>
+                                 <li><a href="Main.jsp">메인</a></li>
+                                 <li><a class="active" href="about.jsp">소개<span class="sr-only">(current)</span></a></li>
                                  <li><a href="dogmanaging.jsp">강아지매니징</a></li>
                                  <li><a href="dogdictionary.jsp">애견사전</a></li>
-                                 <li><a href="board.jsp">커뮤니티</a></li>
+                                 <li><a href="bbs.jsp">커뮤니티</a></li>
                               </ul>
                            </div>
                         </div>
@@ -90,101 +90,117 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <!--header-->
       <!--about-->
       <div class="about-pg">
-         <h3>Dogument ?</h3>
-         <br>
-         <div class="container">
-            <div style="text-align:center;" class="m-content">
-               <h4>
-                  DOGUMENT는 DOCUMENT + DOG = DOGUMENT 합성어.<br> 강아지와 더욱 오래 함께할 수 있도록 건강관리에 도움.<br>
-                  인증된 펫시터를 통해 보다 믿고 맡길수 있도록 도움을 제공.<br>펫시터들과 다이어리 공유를 통해 편리성 제공
-                  강아지에게 필요한 예방접종 제공.<br>
-                  등등등
-               </h4>
-               <br>
-               <div style="padding:0px 10%;" class="abouts">
-                  <div class="about A">
-                     <img style="padding:30px;" src="web_page/images/013-checklist-1.png" alt="pet" class="img-responsive">
-                     <br>
-                     <h4>견종별 맞춤 정보</h4>
-                  </div>
-                  <div class="about B">
-                     <img style="padding:30px;" src="web_page/images/008-network.png" alt="pet" class="img-responsive">
-                     <br>
-                     <h4>가족들과 공유</h4>
-                  </div>
-                  <div class="about C">
-                     <img style="padding-bottom:20px;" src="web_page/images/012-account.png" alt="pet" class="img-responsive">
-                     <br>
-                     <h4>인증된 펫시터들</h4>
-                  </div>
-               </div>
-               <div class="clearfix"></div>
-               <br>
-               <br>
-               <h4>
-                  DOGUMENT는 DOCUMENT + DOG = DOGUMENT 합성어.<br> 강아지와 더욱 오래 함께할 수 있도록 건강관리에 도움.<br>
-                  인증된 펫시터를 통해 보다 믿고 맡길수 있도록 도움을 제공.<br>펫시터들과 다이어리 공유를 통해 편리성 제공
-                  강아지에게 필요한 예방접종 제공.<br>
-                  등등등
-               </h4>
-               <div class="clearfix"></div>
-               <br>
-               <br>
-               <div class="abouts">
-                  <div class="about A">
-                     <div class="mainImg">
-                        <img src="web_page/images/dog_mng.jpg" alt="pet" class="img-responsive">
-                     </div>
-                  </div>
-                  <div class="about B">
-                     <br>
-                     <h4>
-                        견종별 맞춤 정보제공. <br> 활동략 부족으로 인한 스트레스 방지 등
-                     </h4>
-                  </div>
-               </div>
-               <br>
-               <br>
-               <hr style="border:0; height:3px; background:pink;">
-               <br>
-               <div  class="our-team">
-                  <h3>our team</h3>
-               </div>
-               <br>
-               <br>
-               <div class="teams">
-                  <div class="team A">
-                     <img src="web_page/images/t_1.jpg" alt="" title="" class="img-responsive" />
-                     <br>
-                     <h3>유은</h3>
-                  </div>
-                  <div class="team B">
-                     <img src="web_page/images/t_2.jpg" alt="" title="" class="img-responsive" />
-                     <br>
-                     <h3>태영</h3>
-                  </div>
-                  <div class="team C">
-                     <img src="web_page/images/t_3.jpg" alt="" title="" class="img-responsive" />
-                     <br>
-                     <h3>정희</h3>
-                  </div>
-                  <div class="team D">
-                     <img src="web_page/images/t_4.jpg" alt="" title="" class="img-responsive" />
-                     <br>
-                     <h3>한글</h3>
-                  </div>
-                  <div class="team E">
-                     <img src="web_page/images/t_5.jpg" alt="" title="" class="img-responsive" />
-                     <br>
-                     <h3>유찬</h3>
-                  </div>
-               </div>
-               <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-         </div>
-      </div>
-      <br>
+		<h3>Dogument ?</h3>
+		<div class="container">
+			<div style="text-align:center; " class="m-content">
+				<h4 style="line-height:1.7;">
+					<strong>DOGUMENT</strong>는 <strong>Dog</strong>와 <strong>Document</strong>의 합성어로,<br>
+					강아지를 관리하기 쉽도록 도움을 제공하고 있습니다.<br>
+				</h4>
+				<br>
+				<div style="padding:0px 10%; background-color:#ffe0e0;" class="abouts">
+						<div style="border:2px black;" class="about A">
+							<br>
+							<img style="padding:30px;" src="web_page/images/013-checklist-18.png" alt="pet" class="img-responsive">
+							<br>
+							<h4>견종별 맞춤 정보</h4>
+							<h6 style="line-height:1.5;">관리 페이지(다이어리)를 통하여<br>견종별 맞춤정보를 추가 제공합니다.</h6>
+							<br>
+							<br>
+						</div>
+						<div class="about B">
+							<br>
+							<img style="padding:30px;" src="web_page/images/008-network.png" alt="pet" class="img-responsive">
+							<br>
+							<h4>특정 회원들과 공유</h4>
+							<h6 style="line-height:1.5;">기록한 정보는 공유기능으로<br>특정회원에게 공유할 수 있습니다.</h6>
+							<br>
+							<br>
+						</div>
+						<div  class="about C">
+							<br>
+							<img style="padding:10px 0px; margin-left:5px;" src="web_page/images/012-account.png" alt="pet" class="img-responsive">
+							<br>
+							<h4>인증된 펫시터들</h4>
+							<h6 style="line-height:1.5;">게시판을 이용하여 인증된<br>펫시터를 매칭시켜드립니다.</h6>
+							<br>
+							<br>
+						</div>
+				</div>
+				<div class="clearfix"></div>
+				<br>
+				<div style="height:25px;clear:both;display:block;">
+				</div>
+				<h4 style="line-height:1.7;">
+					게시판을 이용하여 펫시터를 구할 수 있고, 인증된 펫시터들에게는 애견정보를 제공합니다.<br>
+					제공된 애견 정보를 바탕으로 펫시터은 강아지에 대한 정보를 미리 파악하여 보다 편안한 환경을 준비할 수 있게됩니다.<br>
+				</h4>
+				<div class="clearfix"></div>
+				<br>
+				<div style="height:25px;clear:both;display:block;">
+				</div>
+				<br>
+				<div class="abouts">
+					<div class="about A">
+						<div class="mainImg">
+							<img src="web_page/images/003-report.png" alt="pet" class="img-responsive">
+						</div>
+					</div>
+					<div style="width:100%; padding-top:6%;" class="about B">
+						<br>
+						<h4 style="line-height:1.8;">
+							기록된 정보를 비교하기 쉽게 원하는
+							 정보를 그래프로 확인할 수 있습니다.
+							공유된 특정회원들과 인증된 펫시터들도
+							 일정 추가를 가능하게 하여,
+							애완견에 대한 모든 정보를 확인할 수 있습니다.
+						</h4>
+					</div>
+				</div>
+				<br>
+				<div style="height:25px;clear:both;display:block;">
+				</div>
+				<br>
+				<hr style="border:0; height:3px; background:pink;">
+				<br>
+				<div  class="our-team">
+					<h3>our team</h3>
+				</div>
+				<br>
+				<br>
+				<div class="teams">
+					<div class="team A">
+						<img src="web_page/images/t_1.jpg" alt="" title="" class="img-responsive" />
+						<br>
+						<h3>유은</h3>
+					</div>
+					<div class="team B">
+						<img src="web_page/images/t_2.jpg" alt="" title="" class="img-responsive" />
+						<br>
+						<h3>태영</h3>
+					</div>
+					<div class="team C">
+						<img src="web_page/images/t_3.jpg" alt="" title="" class="img-responsive" />
+						<br>
+						<h3>정희</h3>
+					</div>
+					<div class="team D">
+						<img src="web_page/images/t_4.jpg" alt="" title="" class="img-responsive" />
+						<br>
+						<h3>한글</h3>
+					</div>
+					<div class="team E">
+						<img src="web_page/images/t_5.jpg" alt="" title="" class="img-responsive" />
+						<br>
+						<h3>유찬</h3>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	<br>
+	</div>
       <!--about-->
       <!--footer-->
       <div class="footer">

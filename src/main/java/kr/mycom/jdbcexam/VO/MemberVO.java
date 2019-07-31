@@ -1,68 +1,40 @@
 package main.java.kr.mycom.jdbcexam.VO;
+import java.util.Date;
 
 public class MemberVO {
-    private String id;
-    private String password;
-    private String name;
-    private String phone;
-    private String address;
-    private String grade;
+	private String id;
+	private String name;
+	private String password;
+	private Date regDate;
 
-    public MemberVO(String id, String password, String name, String phone, String address, String grade) {
-        this.id = id;
-        this.password = password;
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
-        this.grade = grade;
-    }
+	public MemberVO(String id, String name, String password, Date regDate) {
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.regDate = regDate;
+	}
 
+	public String getId() {
+		return id;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public String getPassword() {
+		return password;
+	}
+	
+	public Date getRegDate() {
+		return regDate;
+	}
+	
+	public boolean matchPassword(String pwd) {
+		return password.equals(pwd);
+	}
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
+	public void changePassword(String newPwd) {
+		this.password = newPwd;
+	}
 }

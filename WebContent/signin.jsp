@@ -37,8 +37,8 @@
         .container_2 .half {
             float: none;
             height: 100%;
-            padding: 0px 300px 0;
-            margin:0px 300px;
+            display:auto;
+            width:25em;
         }
         .container_2 h1 {
             font-size: 18px;
@@ -264,11 +264,11 @@
                         <div class="mainmenu">
                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav">
-                                 <li><a class="active" href="Main.jsp">메인 <span class="sr-only">(current)</span></a></li>
+                                 <li><a href="Main.jsp">메인</a></li>
                                  <li><a href="about.jsp">소개</a></li>
                                  <li><a href="dogmanaging.jsp">강아지매니징</a></li>
                                  <li><a href="dogdictionary.jsp">애견사전</a></li>
-                                 <li><a href="board.jsp">커뮤니티</a></li>
+                                 <li><a href="bbs.jsp">커뮤니티</a></li>
                               </ul>
                            </div>
                         </div>
@@ -286,8 +286,8 @@
       <!--header-->
       <!--about-->
       <div class="about-pg">
-            <h3 style="margin-bottom:30px;">로그인</h3>
-         <section style="position:relative;" class="container_2">
+            <h3 style="margin-bottom:30px;">로그인 & 회원가입</h3>
+         <section style="position:relative; display:flex; justify-content:center;" class="container_2">
             <article class="half">
                     <div class="tabs">
                         <span class="tab signin active"><a href="#signin">Sign in</a></span>
@@ -296,10 +296,12 @@
                     <div class="content">
                         <div class="signin-cont cont">
                             <form action="#" method="post" enctype="multipart/form-data">
-                                <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-                                <label for="email">Your email</label>
+                                <input type="text" name="Id" id="email" class="inpt" required="required" placeholder="Your Id">
+                                <label for="Id">Your Id</label>
+                                
                                 <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
                                 <label for="password">Your password</label>
+                                
                                 <input type="checkbox" id="remember" class="checkbox" checked>
                                 <label for="remember">Remember me</label>
                                 <div class="submit-wrap">
@@ -310,13 +312,19 @@
                         </div>
                         <div class="signup-cont cont">
                             <form action="#" method="post" enctype="multipart/form-data">
-                            <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
-                            <label for="name">Your name</label>
-                      <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-                            <label for="email">Your email</label>
-                            <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                            <label for="password">Your password</label>
-                                <div class="submit-wrap">
+	                            <input type="text" name="Id" id="Id" class="inpt" required="required" placeholder="Your Id">
+	                            <label for="Id">Your Id</label>
+	                            
+	                     		<input type="Name" name="Name" id="Name" class="inpt" required="required" placeholder="Your Name">
+	                            <label for="Name">Your name</label>
+	                            
+	                            <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+	                            <label for="password">Your password</label>
+                              
+                              	<input type="password" name="confirmPassword" id="confirmPassword" class="inpt" required="required" placeholder="Your confirmPassword">
+	                            <label for="confirmPassword">Your confirmPassword</label>
+	                            
+                                <div style="top:250px;" class="submit-wrap">
                                     <input type="submit" value="Sign up" class="submit">
                                     <a href="#" class="more">Terms and conditions</a>
                                 </div>

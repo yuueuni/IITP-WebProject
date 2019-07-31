@@ -510,13 +510,6 @@ span a.btn.btn-danger.bt {
 .form{
    text-align:right;
 }
-input[type="text"]{
-   outline:none;
-   width: 70%;
-   border: 2px solid #1C1C1C;
-   padding: 8px 8px;
-   margin: -5px 0px;
-}
 .feed-back {
    padding: 3em 0;
 }
