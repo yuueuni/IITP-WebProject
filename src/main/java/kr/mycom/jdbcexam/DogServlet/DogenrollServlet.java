@@ -30,7 +30,7 @@ public class DogenrollServlet extends HttpServlet {
     	
     	System.out.println(request.getParameter("dogname"));
     	//System.out.println(request.getParameter("dogname")+Integer.parseInt(request.getParameter("weight")));
-    	
+		dogvo.setDog_num("temp");
     	dogvo.setWeight(Integer.parseInt(request.getParameter("weight")));
     	dogvo.setName(request.getParameter("dogname"));
     	dogvo.setAge(Integer.parseInt(request.getParameter("age")));

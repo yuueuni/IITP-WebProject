@@ -21,13 +21,13 @@ public class DogDAO {
 
 	private static String dburl = "jdbc:mysql://localhost:3306/dogument?" + "useUnicode=true&characterEncoding=utf8";
 	private static String dbUser = "root";
-	private static String dbpasswd = "user";
+	private static String dbpasswd = "1234";
 
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 			System.out.println("연결성공");
 		} catch (ClassNotFoundException e) {

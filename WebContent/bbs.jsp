@@ -168,7 +168,7 @@
                   <tr>
                      <th style=" text-align: center;">1</th>
                      <th style=" text-align: center;"><a onclick="location='view.jsp'" >test</a></th>
-                     <th style=" text-align: center;">user</th>
+                     <th style=" text-align: center;">userVO</th>
                      <th style=" text-align: center;">2019-07-31</th>
                   </tr>
                   

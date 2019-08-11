@@ -61,10 +61,10 @@
             cursor: pointer;
             letter-spacing: 0;
             border-bottom: 1px solid #d9d9d9;
-            -moz-user-select: -moz-none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
+            -moz-userVO-select: -moz-none;
+            -ms-userVO-select: none;
+            -webkit-userVO-select: none;
+            userVO-select: none;
             transition: all 0.1s ease-in-out;
         }
         body .container_2 .tabs .tab a {
@@ -102,10 +102,10 @@
         body .container_2 .content label {
         font-size: 12px;
         color: #263238;
-        -moz-user-select: -moz-none;
-        -ms-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
+        -moz-userVO-select: -moz-none;
+        -ms-userVO-select: none;
+        -webkit-userVO-select: none;
+        userVO-select: none;
         }
         body .container_2 .content label:not([for='remember']) {
         display: none;

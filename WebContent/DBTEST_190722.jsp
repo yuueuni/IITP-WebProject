@@ -21,9 +21,9 @@
 	try {
 
 		String url = "jdbc:mysql://localhost:3306/calendar?" + "useUnicode=true&characterEncoding=utf8";
-		String user = "root";
-		String pw = "user";
-		conn = DriverManager.getConnection(url, user, pw);
+		String userVO = "root";
+		String pw = "userVO";
+		conn = DriverManager.getConnection(url, userVO, pw);
 
 		if (conn != null) {
 			stmt = conn.createStatement();

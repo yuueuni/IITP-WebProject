@@ -1,6 +1,6 @@
-package main.java.user;
+package main.java.kr.mycom.jdbcexam.VO;
 
-public class User {
+public class UserVO {
 
 	private String id;
 	private String password;
@@ -25,6 +25,21 @@ public class User {
 		this.name = name;
 	}
 
-	
-	
+	public UserVO() {
+	}
+
+	public UserVO(String id, String password, String name) {
+		this.id = id;
+		this.password = password;
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "UserVO{" +
+				"id='" + id + '\'' +
+				", password='" + password + '\'' +
+				", name='" + name + '\'' +
+				'}';
+	}
 }

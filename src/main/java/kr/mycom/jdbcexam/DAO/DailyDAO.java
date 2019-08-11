@@ -17,7 +17,7 @@ public class DailyDAO {
 	
 	 private static String dburl = "jdbc:mysql://localhost:3306/dogument?" + "useUnicode=true&characterEncoding=utf8";
 	    private static String dbUser = "root";
-	    private static String dbpasswd = "user";
+	    private static String dbpasswd = "1234";
 
 	    private Connection getConnection() throws SQLException {
 	        Connection conn = null;

@@ -123,6 +123,11 @@ ul.nav.navbar-nav li a.active{
    font-size:16px;
    font-weight: 700;
 }
+
+	.dogageimg{
+	height: 300px;
+	weight: 300px"
+	}
 </style>
 </head>
 <body  style="padding:0;">
@@ -317,7 +322,7 @@ ul.nav.navbar-nav li a.active{
             <div class="panel-body">
 
                 <div class="col-lg-6">
-                    <label for="calendar_view">구분별</label>
+                    <!--<label for="calendar_view">구분별</label>-->
                     <div class="input-group">
                         <select class="filter" id="type_filter" multiple="multiple">
                             <option value="산책">산책</option>
@@ -329,7 +334,7 @@ ul.nav.navbar-nav li a.active{
                 </div>
 
                 <div class="col-lg-6">
-                    <label for="calendar_view">등록자별</label>
+                   <!-- <label for="calendar_view">등록자별</label>-->
                     <div class="input-group">
                         <label class="checkbox-inline"><input class='filter' type="checkbox" value="정연"
                                 checked>정연</label>
@@ -351,7 +356,7 @@ ul.nav.navbar-nav li a.active{
 	
 	<div style="text-align: center;" class="about-pg ">
 		<h3>우리 댕댕이 나이는 사람으로 몇 살일까?</h3>
-	<img class="img" style="height: 300px"  "weight: 300px" src="web_page/images/dogage.png" /> <br> <br>
+	<img class="dogageimg" src="web_page/images/dogage.png" /> <br> <br>
 		<form action="" enctype="multipart/form-data">
 			<div class="dogsize-botton">
 				<input type="radio" name="dogsize" value="big">대형견<br>

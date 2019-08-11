@@ -2,7 +2,7 @@
 
     pageEncoding="UTF-8"%>
 
-<%@ page import="main.java.user.UserDAO" %> <!-- userdao의 클래스 가져옴 -->
+<%@ page import="main.java.kr.mycom.jdbcexam.DAO.UserDAO" %> <!-- userdao의 클래스 가져옴 -->
 
 <%@ page import="java.io.PrintWriter" %> <!-- 자바 클래스 사용 -->
 
@@ -12,13 +12,13 @@
 
 <!-- 한명의 회원정보를 담는 user클래스를 자바 빈즈로 사용 / scope:페이지 현재의 페이지에서만 사용-->
 
-<jsp:useBean id="user" class="main.java.user.User" scope="page" />
+<jsp:useBean id="userVO" class="main.java.kr.mycom.jdbcexam.VO.UserVO" scope="page" />
 
-<jsp:setProperty name="user" property="id" />
+<jsp:setProperty name="userVO" property="id" />
 
-<jsp:setProperty name="user" property="password" /> 
+<jsp:setProperty name="userVO" property="password" />
 
-<jsp:setProperty name="user" property="name" />
+<jsp:setProperty name="userVO" property="name" />
 
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@
 
 	
 
-		if (user.getId() == null || user.getPassword() == null || user.getName() == null){
+		if (userVO.getId() == null || userVO.getPassword() == null || userVO.getName() == null){
 
 				PrintWriter script = response.getWriter();
 
@@ -83,7 +83,7 @@
 
 				UserDAO userDAO = new UserDAO(); //인스턴스생성
 
-				int result = userDAO.join(user);				
+				int result = userDAO.join(userVO);
 
 				
 

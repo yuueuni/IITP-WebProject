@@ -37,7 +37,7 @@
         .container_2 .half {
             float: none;
             height: 100%;
-            display:auto;
+
             width:25em;
         }
         .container_2 h1 {
@@ -62,10 +62,10 @@
             cursor: pointer;
             letter-spacing: 0;
             border-bottom: 1px solid #d9d9d9;
-            -moz-user-select: -moz-none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
+            -moz-userVO-select: -moz-none;
+            -ms-userVO-select: none;
+            -webkit-userVO-select: none;
+            userVO-select: none;
             transition: all 0.1s ease-in-out;
         }
         body .container_2 .tabs .tab a {
@@ -103,10 +103,10 @@
         body .container_2 .content label {
         font-size: 12px;
         color: #263238;
-        -moz-user-select: -moz-none;
-        -ms-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
+        -moz-userVO-select: -moz-none;
+        -ms-userVO-select: none;
+        -webkit-userVO-select: none;
+        userVO-select: none;
         }
         body .container_2 .content label:not([for='remember']) {
         display: none;
@@ -215,9 +215,10 @@
         content: "✓";
         }
         body .container_2 .content .submit-wrap {
-        position: absolute;
+        position: relative;
         bottom: 0;
         width: 100%;
+        margin-bottom: 30px;
         }
         body .container_2 .content .submit-wrap a {
         font-size: 12px;
@@ -273,7 +274,8 @@
                            </div>
                         </div>
                         <div>
-                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in / Sign up</h4></button>
+                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in</h4></button>
+                            <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign up</h4></button>
                         </div>
                      </div>
                   </div>
@@ -286,50 +288,27 @@
       <!--header-->
       <!--about-->
       <div class="about-pg">
-            <h3 style="margin-bottom:30px;">로그인 & 회원가입</h3>
+            <h3 style="margin-bottom:30px;">로그인</h3>
          <section style="position:relative; display:flex; justify-content:center;" class="container_2">
             <article class="half">
-                    <div class="tabs">
+                   <!-- <div class="tabs">
                         <span class="tab signin active"><a href="#signin">Sign in</a></span>
                         <span class="tab signup"><a href="#signup">Sign up</a></span>
-                    </div>
+                    </div>-->
                     <div class="content">
                         <div class="signin-cont cont">
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="UserServlet" method="GET" enctype="multipart/form-data">
                                 <input type="text" name="Id" id="email" class="inpt" required="required" placeholder="Your Id">
-                                <label for="Id">Your Id</label>
                                 
                                 <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                                <label for="password">Your password</label>
-                                
-                                <input type="checkbox" id="remember" class="checkbox" checked>
-                                <label for="remember">Remember me</label>
+
                                 <div class="submit-wrap">
                                     <input type="submit" value="Sign in" class="submit">
                                     <a href="#" class="more">Forgot your password?</a>
                                 </div>
                             </form>
                         </div>
-                        <div class="signup-cont cont">
-                            <form action="#" method="post" enctype="multipart/form-data">
-	                            <input type="text" name="Id" id="Id" class="inpt" required="required" placeholder="Your Id">
-	                            <label for="Id">Your Id</label>
-	                            
-	                     		<input type="Name" name="Name" id="Name" class="inpt" required="required" placeholder="Your Name">
-	                            <label for="Name">Your name</label>
-	                            
-	                            <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-	                            <label for="password">Your password</label>
-                              
-                              	<input type="password" name="confirmPassword" id="confirmPassword" class="inpt" required="required" placeholder="Your confirmPassword">
-	                            <label for="confirmPassword">Your confirmPassword</label>
-	                            
-                                <div style="top:250px;" class="submit-wrap">
-                                    <input type="submit" value="Sign up" class="submit">
-                                    <a href="#" class="more">Terms and conditions</a>
-                                </div>
-                     </form>
-                    </div>
+
                </div>
             </article>
           </section>
