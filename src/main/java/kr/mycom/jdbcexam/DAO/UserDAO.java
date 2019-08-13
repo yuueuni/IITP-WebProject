@@ -25,7 +25,7 @@ public class UserDAO {
     }
 
     public int login(String id, String password) {
-        String SQL = "SELECT * FROM member WHERE id = ?";
+        String SQL = "SELECT password FROM member WHERE id = ?";
 
         try {
             pstmt = conn.prepareStatement(SQL);
@@ -47,7 +47,7 @@ public class UserDAO {
         return -2; // �����ͺ��̽� ������ �ǹ�
     }
 
-    public boolean join(UserVO userVO) {
+    public int join(UserVO userVO) {
 
         String SQL = "INSERT INTO member VALUES (?,?,?)";
 
@@ -59,15 +59,27 @@ public class UserDAO {
             pstmt.setString(2, userVO.getPassword());
             pstmt.setString(3, userVO.getName());
 
-            return pstmt.executeUpdate() == 1;
+            int result = pstmt.executeUpdate();
+            return result;
 
         } catch (Exception e) {
 
             e.printStackTrace();
 
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
-        return false; // DB ����
+        return -1; // DB 오류
 
     }
 
@@ -78,12 +90,26 @@ public class UserDAO {
 
             pstmt = conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
-            return rs.getInt(0) > 0;
+            int result = rs.getInt(0);
+            if (result > 0) {
+                return true;
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return false;
     }
-
 }

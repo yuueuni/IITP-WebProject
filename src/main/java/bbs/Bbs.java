@@ -1,49 +1,63 @@
 package main.java.bbs;
 
+import java.util.Date;
+
 public class Bbs {
 
-	private int bbsID;
-	private String bbsTitle;
-	private String userID;
-	private String bbsDate;
-	private String bbsContent;
-	private int bbsAvailable;
-	public int getBbsID() {
-		return bbsID;
+	private int board_index;
+	private String id;
+	private String title;
+	private String content;
+	private Date reg_date;
+
+	public int getBoard_index() {
+		return board_index;
 	}
-	public void setBbsID(int bbsID) {
-		this.bbsID = bbsID;
+
+	public void setBoard_index(int board_index) {
+		this.board_index = board_index;
 	}
-	public String getBbsTitle() {
-		return bbsTitle;
+
+	public String getId() {
+		return id;
 	}
-	public void setBbsTitle(String bbsTitle) {
-		this.bbsTitle = bbsTitle;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getUserID() {
-		return userID;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getBbsDate() {
-		return bbsDate;
+
+	public String getContent() {
+		return content;
 	}
-	public void setBbsDate(String bbsDate) {
-		this.bbsDate = bbsDate;
+
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public String getBbsContent() {
-		return bbsContent;
+
+	public Date getReg_date() {
+		return reg_date;
 	}
-	public void setBbsContent(String bbsContent) {
-		this.bbsContent = bbsContent;
+
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
 	}
-	public int getBbsAvailable() {
-		return bbsAvailable;
+
+	public Bbs(int board_index, String id, String title, String content, Date reg_date) {
+		this.board_index = board_index;
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.reg_date = reg_date;
 	}
-	public void setBbsAvailable(int bbsAvailable) {
-		this.bbsAvailable = bbsAvailable;
+
+	public Bbs() {
 	}
-	
-	
 }

@@ -17,32 +17,34 @@ import main.java.kr.mycom.jdbcexam.VO.UserVO;
 public class UserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    //회원가입
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+    }
+
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        System.out.println("fuck i am here");
         UserVO uservo = new UserVO();
-        uservo.setId(request.getParameter("Id"));
-        uservo.setName(request.getParameter("Name"));
-        uservo.setPassword(request.getParameter("Password"));
+        uservo.setId(request.getParameter("signupId"));
+        uservo.setName(request.getParameter("signupName"));
+        uservo.setPassword(request.getParameter("signupPassword"));
 
         UserDAO dao = new UserDAO();
+        dao.join(uservo);
         boolean isExist = dao.existMember(uservo);
+        System.out.println(isExist);
 
         if (isExist) {
             throw new IllegalArgumentException("이미 가입된 회원입니다.");
         }
 
-        boolean isSuccess = dao.join(uservo);
-        if(isSuccess) {
-            response.sendRedirect("signin.jsp");
+        int isSuccess = dao.join(uservo);
+        if(isSuccess>0) {
+            response.sendRedirect("Main.jsp");
         }
-
-    }
-
-
-    //로그인
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+   }
 }
