@@ -1,6 +1,11 @@
+<%@ page import="main.java.kr.mycom.jdbcexam.DAO.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+         pageEncoding="UTF-8"%>
+
+
+<!DOCTYPE html >
 <html>
 <head>
 <title>DOGUMENT</title>
@@ -234,9 +239,18 @@
         body .container_2 .content .signup-cont {
         display: none;
         }
+
         </style>
 </head>
    <body>
+
+   <%
+//       String id = request.getParameter("")
+//       int result = (int)request.getAttribute("result");
+//       System.out.println(result);
+
+   %>
+
       <!--header-part-->
       <div class="banner-background" id="to-top">
       <div class="container">
@@ -273,10 +287,13 @@
                               </ul>
                            </div>
                         </div>
-                        <div>
-                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in</h4></button>
-                            <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign up</h4></button>
-                        </div>
+                         <span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+                         <span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
                      </div>
                   </div>
                </nav>
@@ -297,21 +314,41 @@
                     </div>-->
                     <div class="content">
                         <div class="signin-cont cont">
-                            <form action="loginAction.jsp" method="GET" enctype="multipart/form-data">
-                                <input type="text" name="Id"  class="inpt" required="required" placeholder="Your Id">
-                                
-                                <input type="password" name="Password" class="inpt" required="required" placeholder="Your password">
+                            <form action="/LoginServlet" method="GET" enctype="multipart/form-data">
 
-                                <div class="submit-wrap">
+                                <div class="input-group"style="margin-bottom:15px;">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="Id" type="text" class="form-control" name="Id" placeholder="Id">
+                                </div>
+
+
+                                <div class="input-group"style="margin-bottom:15px;">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="password" type="password" class="form-control" name="Password" placeholder="Password">
+                                </div>
+
+
+
+                                <!--
+                                <div class="form-group">
+                                   <h4>ID:</h4><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input type="text" name="Id"  required="required" placeholder="Your Id">
+                                </div>
+
+                                <div class="form-group">
+                                    <h4>PW:</h4>
+                                <input type="password" name="Password"  required="required" placeholder="Your password">
+                                </div>-->
+                                <div class="submit-wrap" style="margin-bottom:15px;">
                                     <input type="submit" value="Sign in" class="submit">
                                     <a href="#" class="more">Forgot your password?</a>
                                 </div>
                             </form>
                         </div>
-
                </div>
-            </article>
+              </article>
           </section>
+
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
             <script type="text/javascript">
             $('.tabs .tab').click(function(){
@@ -376,19 +413,86 @@
       <!--footer-->
       <!---->
       <script type="text/javascript">
-            $(document).ready(function() {
-                    /*
-                    var defaults = {
-                    containerID: 'toTop', // fading element id
-                    containerHoverID: 'toTopHover', // fading element hover id
-                    scrollSpeed: 1200,
-                    easingType: 'linear' 
-                    };
-                    */
-            $().UItoTop({ easingType: 'easeOutQuart' });
+
       });
       </script>
       <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-      <!----> 
+      <!--login logic-->
+   <%
+
+       UserDAO userDAO = new UserDAO();
+       //인스턴스생성
+       UserVO user = new UserVO();
+
+       int result = userDAO.login(user.getId(), user.getPassword());
+
+
+
+       //로그인 성공
+
+       if(result == 1){
+
+           PrintWriter script = response.getWriter();
+
+           script.println("<script>");
+
+           script.println("<location.href = 'main.jsp'");
+
+           script.println("</script>");
+
+       }
+
+       //로그인 실패
+
+       else if(result == 0){
+
+           PrintWriter script = response.getWriter();
+
+           script.println("<script>");
+
+           script.println("alert('비밀번호가 틀립니다.')");
+
+           script.println("history.back()");
+
+           script.println("</script>");
+
+       }
+
+       //아이디 없음
+
+       else if(result == -1){
+
+           PrintWriter script = response.getWriter();
+
+           script.println("<script>");
+
+           script.println("alert('존재하지 않는 아이디 입니다.')");
+
+           script.println("history.back()");
+
+           script.println("</script>");
+
+       }
+
+       //DB오류
+
+       else if(result == -2){
+
+           PrintWriter script = response.getWriter();
+
+           script.println("<script>");
+
+           script.println("alert('DB오류가 발생했습니다.')");
+
+           script.println("history.back()");
+
+           script.println("</script>");
+
+       }
+
+
+
+   %>
+
    </body>
 </html>

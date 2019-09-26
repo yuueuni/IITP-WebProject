@@ -85,7 +85,7 @@
 											<li><a href="about.jsp">소개</a></li>
 											<li><a href="dogmanaging.jsp">강아지매니징</a></li>
 											<li><a href="dogdictionary.jsp">애견사전</a></li>
-											<li><a href="bbs.jsp">커뮤니티</a></li>
+											<li><a href="bbsVO.jsp">커뮤니티</a></li>
 										</ul>
 									</div>
 								</div>
@@ -116,7 +116,9 @@
 		<button class="label label-danger" onclick="location='doginput.jsp'" style="margin-top: .5em; padding-bottom: 0em;">
 			<h4>강아지 매니징 페이지로 이동</h4>
 		</button>
-
+		<button class="label label-danger" onclick="location='doglist.jsp'" style="margin-top: .5em; padding-bottom: 0em;">
+			<h4>등록된 강아지 확인하기</h4>
+		</button>
 		<br>
 		<br>
 		</div>

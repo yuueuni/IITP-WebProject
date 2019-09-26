@@ -4,9 +4,11 @@
 
 <%@ page import="java.io.PrintWriter"%>
 
-<%@ page import="main.java.bbs.Bbs"%>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.BbsVO"%>
 
-<%@ page import="main.java.bbs.BbsDAO"%>
+<%@ page import="main.java.kr.mycom.jdbcexam.DAO.BbsDAO"%>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
+
 
 <!DOCTYPE html>
 
@@ -50,42 +52,34 @@
 <body>
 
    <%
-
-      //로긴한사람이라면    userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
-
-      String userID = null;
-
-      if (session.getAttribute("userID") != null) {
-
-         userID = (String) session.getAttribute("userID");
-
-   
-
-      }
+      /* String userID = null;
+       UserVO sessionMember = (UserVO) session.getAttribute("member");
+        userID=sessionMember.getId();
 
       int bbsID = 0;
 
-         /*if (request.getParameter("bbsID") != null) {
-   
-            bbsID = Integer.parseInt(request.getParameter("bbsID"));
-   
-         }*/
+         if (request.getParameter("board_Index") != null) {
+
+            bbsID = Integer.parseInt(request.getParameter("board_Index"));
+
+         }
 
       if (bbsID == 0) {
 
-         /*PrintWriter script = response.getWriter();
+         PrintWriter script = response.getWriter();
 
          script.println("<script>");
 
          script.println("alert('유효하지 않은 글 입니다.')");
 
-         script.println("location.href = 'bbs.jsp'");
+         script.println("location.href = 'bbsVO.jsp'");
 
-         script.println("</script>");*/
+         script.println("</script>");
 
-         Bbs bbs = new BbsDAO().getBbs(bbsID);
+         BbsVO bbs = new BbsDAO().getBbs(bbsID);
       }
 
+*/
 
    %>
 
@@ -113,7 +107,7 @@
                                  <li><a href="about.jsp">소개</a></li>
                                  <li><a href="dogmanaging.jsp">강아지매니징</a></li>
                                  <li><a href="dogdictionary.jsp">애견사전</a></li>
-                                 <li><a class="active" href="bbs.jsp">커뮤니티<span class="sr-only">(current)</span></a></li>
+                                 <li><a class="active" href="bbsVO.jsp">커뮤니티<span class="sr-only">(current)</span></a></li>
                               </ul>
                            </div>
                         </div>
@@ -154,41 +148,19 @@
                </thead>
 
                <tbody>
+               <%
 
-                  <tr>
 
-                     <td style="width: 20%; border-right: 1px solid #d4d0d0;"> 글 제목 </td>
+                   int board_Index = 0;
+                   Integer.parseInt(request.getParameter("board_index"));
+                   System.out.println(board_Index);
+                   BbsVO bbs = new BbsDAO().getBbs(board_Index);
 
-                     <td colspan="2">test</td>
 
-                  </tr>
 
-                  <tr>
+               %>
 
-                     <td style="border-right: 1px solid #d4d0d0;" >작성자</td>   
 
-                     <td colspan="2">유저</td>
-
-                  </tr>
-
-                  <tr>
-
-                     <td style="border-right: 1px solid #d4d0d0;">작성일</td>   
-
-                     <td colspan="2">2019-07-31</td>
-                     
-
-                  </tr>
-
-                  <tr>
-
-                     <td style="border-right: 1px solid #d4d0d0;">내용</td>   
-
-                     <td colspan="2" style="min-height: 200px; text-align: left; padding:16px !important;">
-                     테스트글
-                     </td>
-
-                  </tr>
 
                   
 

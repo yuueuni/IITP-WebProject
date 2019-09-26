@@ -2,9 +2,9 @@
 
 	pageEncoding="UTF-8"%>
 
-<%@ page import="main.java.bbs.BbsDAO"%>
+<%@ page import="main.java.bbsVO.BbsDAO"%>
 
-<%@ page import="main.java.bbs.Bbs"%>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.BbsVO"%>
 
 <%@ page import="java.io.PrintWriter"%>
 
@@ -70,15 +70,15 @@
 
 			script.println("alert('유효하지 않은 글 입니다')");
 
-			script.println("location.href='bbs.jsp'");
+			script.println("location.href='bbsVO.jsp'");
 
 			script.println("</script>");
 
 		}
 
-		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		BbsVO bbsVO = new BbsDAO().getBbs(bbsID);
 
-		if(!userID.equals(bbs.getUserID())) {
+		if(!userID.equals(bbsVO.getUserID())) {
 
 			PrintWriter script = response.getWriter();
 
@@ -86,7 +86,7 @@
 
 			script.println("alert('권한이 없습니다')");
 
-			script.println("location.href='bbs.jsp'");
+			script.println("location.href='bbsVO.jsp'");
 
 			script.println("</script>");			
 
@@ -116,7 +116,7 @@
 
 				script.println("<script>");
 
-				script.println("location.href='bbs.jsp'");
+				script.println("location.href='bbsVO.jsp'");
 
 				script.println("</script>");
 

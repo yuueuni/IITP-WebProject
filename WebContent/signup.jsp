@@ -1,6 +1,11 @@
+<%@ page import="main.java.kr.mycom.jdbcexam.DAO.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+
+<!DOCTYPE html >
 <html>
 <head>
     <title>DOGUMENT</title>
@@ -234,28 +239,187 @@
         body .container_2 .content .signup-cont {
             display: none;
         }
+
     </style>
 </head>
 <body>
+
+<%
+    //       String id = request.getParameter("")
+//       int result = (int)request.getAttribute("result");
+//       System.out.println(result);
+
+%>
+
 <!--header-part-->
+<div class="banner-background" id="to-top">
+    <div class="container">
+        <div class="nav-back">
+            <div class="navigation">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span> <span
+                                class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div>
+                        <div style="display: flex; justify-content: space-around;">
+                            <div class="logo">
+                                <h1>
+                                    <a href="Main.jsp">Dog<span class="hlf">ument</span></a>
+                                </h1>
+                            </div>
+                            <div class="mainmenu">
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="Main.jsp">메인</a></li>
+                                        <li><a href="about.jsp">소개</a></li>
+                                        <li><a href="dogmanaging.jsp">강아지매니징</a></li>
+                                        <li><a href="dogdictionary.jsp">애견사전</a></li>
+                                        <li><a href="bbs.jsp">커뮤니티</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
 
-<div >
-    <form action="/UserServlet" method="GET" enctype="multipart/form-data">
-
-        <input type="text" name="signupName"  class="inpt" required="required" placeholder="Your Name">
-
-        <input type="text" name="signupId"  class="inpt" required="required" placeholder="Your Id">
-
-        <input type="password" name="signupPassword"  class="inpt" required="required" placeholder="Your password">
-
-        <!--<input type="password" name="signupcomfirmedpassword"  class="inpt" required="required" placeholder="Your comfirmed password">-->
-
-        <div class="submit-wrap">
-            <input type="submit" value="Sign in" class="submit">
-            <a href="#" class="more">Forgot your password?</a>
+                            <span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
+                        </div>
+                    </div>
+                </nav>
+                <div class="clearfix"></div>
+            </div>
         </div>
-    </form>
+    </div>
 </div>
+<!--header-->
+<!--about-->
+<div class="about-pg">
+    <h3 style="margin-bottom:30px;">회원가입</h3>
+    <section style="position:relative; display:flex; justify-content:center;" class="container_2">
+        <article class="half">
+            <!-- <div class="tabs">
+                 <span class="tab signin active"><a href="#signin">Sign in</a></span>
+                 <span class="tab signup"><a href="#signup">Sign up</a></span>
+             </div>-->
+            <div class="content">
+                <div class="signin-cont cont">
+                    <form action="/UserServlet" method="GET" enctype="multipart/form-data">
+                        <!--
+                                <input type="text" name="signupName"  class="inpt" required="required" placeholder="Your Name">
+
+                                <input type="text" name="signupId"  class="inpt" required="required" placeholder="Your Id">
+
+                                <input type="password" name="sㅠㅠignupPassword"  class="inpt" required="required" placeholder="Your password">
+
+                                -->
+
+                        <div class="input-group" style="margin-bottom:15px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="text" class="form-control" name="signupName" placeholder="Your Name">
+                        </div>
+
+
+                        <div class="input-group" style="margin-bottom:15px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="Id" type="text" class="form-control" name="signupId" placeholder="Your Id">
+                        </div>
+
+                        <div class="input-group" style="margin-bottom:15px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="form-control" name="signupPassword" placeholder="Your password">
+                        </div>
+
+
+                        <div class="submit-wrap" style="margin-bottom:15px;">
+                            <input type="submit" value="Sign up" class="submit">
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('.tabs .tab').click(function(){
+            if ($(this).hasClass('signin')) {
+                $('.tabs .tab').removeClass('active');
+                $(this).addClass('active');
+                $('.cont').hide();
+                $('.signin-cont').show();
+            }
+            if ($(this).hasClass('signup')) {
+                $('.tabs .tab').removeClass('active');
+                $(this).addClass('active');
+                $('.cont').hide();
+                $('.signup-cont').show();
+            }
+        });
+        $('.container .bg').mousemove(function(e){
+            var amountMovedX = (e.pageX * -1 / 30);
+            var amountMovedY = (e.pageY * -1 / 9);
+            $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+        });
+    </script>
+</div>
+<br>
+<!--about-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="col-md-3 mrg1">
+            <div class="logo">
+                <h1><a href="index.html">Dog<span class="hlf">ument</span></a></h1>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-3 mrg1">
+            <br>
+            <div style="color:gray; padding-top:8px;">
+                <h5><a href="#">개인정보취급방침</a><a href="#"> 이용약관</a></h5>
+            </div>
+        </div>
+        <div class="col-md-3 brk5">
+            <div class="follow-us">
+                <h4>FOLLOW US</h4>
+                <ul>
+                    <li><a href="#" class="fb"></a></li>
+                    <li><a href="#" class="twt"></a></li>
+                    <li><a href="#" class="gpls"></a></li>
+                    <li><a href="#" class="pint"></a></li>
+                    <li><a href="#" class="lnkdin"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 brk5">
+            <div class="copy-rt">
+                <h4>COPYRIGHT</h4>
+                <p>Pet Kennel &#169 2015 Design by <a href="http://www.w3layouts.com" target="_blank">w3layouts</a></p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--footer-->
+<!---->
+<script type="text/javascript">
+
+
+</script>
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 </body>
 </html>

@@ -31,6 +31,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" type='text/css'>
       <!-- jquery -->
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<style>
+		.img-responsive{
+			height:200px;
+			weight:200px;
+		}
+	</style>
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <!--script-->
@@ -91,9 +97,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               </ul>
                            </div>
                         </div>
-                        <div>
-                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in / Sign up</h4></button>
-                        </div>
+						 <span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+						 <span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
                      </div>
                   </div>
                </nav>

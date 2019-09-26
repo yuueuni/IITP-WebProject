@@ -4,51 +4,57 @@
 
 <%@ page import="java.io.PrintWriter"%>
 
-<%@ page import="main.java.bbs.Bbs"%>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.BbsVO"%>
 
-<%@ page import="main.java.bbs.BbsDAO"%>
+<%@ page import="main.java.bbsVO.BbsDAO"%>
 
 <!DOCTYPE html>
 
 <html>
 <head>
-<meta charset="UTF-8">
-<title>DOGUMENT</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords"
-   content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript">      
-    addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-</script>
-<!--bootstrap-->
-<link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<!--coustom css-->
-<link href="web_page/css/style.css" rel="stylesheet" type="text/css" />
-<!--script-->
-<script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="web_page/js/jquery-2.1.4.min.js"></script>
-<script src="web_page/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="web_page/js/move-top.js"></script>
-<script type="text/javascript" src="web_page/js/easing.js"></script>
-<!--fonts-->
-<link   href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700'   rel='stylesheet' type='text/css'>
-<link   href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'   rel='stylesheet' type='text/css'>
-<!--script-->
-<script type="text/javascript">
-   jQuery(document).ready(function($) {
-      $(".scroll").click(function(event) {
-         event.preventDefault();
-         $('html,body').animate({
-            scrollTop : $(this.hash).offset().top
-         }, 900);
-      });
-   });
-</script>
+	<meta charset="UTF-8">
+	<title>DOGUMENT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords"
+		  content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--bootstrap-->
+	<link href="web_page/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!--coustom css-->
+	<link href="web_page/css/style.css" rel="stylesheet" type="text/css"/>
+	<!--script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="web_page/js/jquery-2.1.4.min.js"></script>
+	<script src="web_page/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="web_page/js/move-top.js"></script>
+	<script type="text/javascript" src="web_page/js/easing.js"></script>
+	<!--fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!--script-->
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
 </head>
 <body>
 
-	<%
+<%
 
 		//로긴한사람이라면	 userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
 
@@ -98,15 +104,15 @@
 
 			script.println("alert('유효하지 않은 글 입니다.')");
 
-			script.println("location.href = 'bbs.jsp'");
+			script.println("location.href = 'bbsVO.jsp'");
 
 			script.println("</script>");
 
 		}
 
-		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		BbsVO bbsVO = new BbsDAO().getBbs(bbsID);
 
-		if (!userID.equals(bbs.getUserID())) {
+		if (!userID.equals(bbsVO.getUserID())) {
 
 			PrintWriter script = response.getWriter();
 
@@ -114,7 +120,7 @@
 
 			script.println("alert('권한이 없습니다.')");
 
-			script.println("location.href = 'bbs.jsp'");
+			script.println("location.href = 'bbsVO.jsp'");
 
 			script.println("</script>");				
 
@@ -146,7 +152,7 @@
                                  <li><a href="about.jsp">소개</a></li>
                                  <li><a href="dogmanaging.jsp">강아지매니징</a></li>
                                  <li><a href="dogdictionary.jsp">애견사전</a></li>
-                                 <li><a class="active" href="bbs.jsp">커뮤니티<span class="sr-only">(current)</span></a></li>
+                                 <li><a class="active" href="bbsVO.jsp">커뮤니티<span class="sr-only">(current)</span></a></li>
                               </ul>
                            </div>
                         </div>
@@ -193,13 +199,13 @@
 
 						<tr>
 
-							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" value="<%= bbs.getBbsTitle() %>" ></td>
+							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" value="<%= bbsVO.getBbsTitle() %>" ></td>
 
 						</tr>
 
 						<tr>
 
-							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" ><%= bbs.getBbsContent() %></textarea></td>
+							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" ><%= bbsVO.getBbsContent() %></textarea></td>
 
 						</tr>
 

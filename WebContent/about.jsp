@@ -1,5 +1,7 @@
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <!--script-->
       <script type="text/javascript">
          jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){      
+            $(".scroll").click(function(event){
                event.preventDefault();
                $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
             });
@@ -72,14 +74,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                  <li><a class="active" href="about.jsp">소개<span class="sr-only">(current)</span></a></li>
                                  <li><a href="dogmanaging.jsp">강아지매니징</a></li>
                                  <li><a href="dogdictionary.jsp">애견사전</a></li>
-                                 <li><a href="bbs.jsp">커뮤니티</a></li>
+                                 <li><a href="bbsVO.jsp">커뮤니티</a></li>
                               </ul>
                            </div>
                         </div>
-                        <div>
-                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in / Sign up</h4></button>
-                        </div>
-                     </div>
+						 <%
+							 UserVO sessionMember = (UserVO) session.getAttribute("member");
+							 if (sessionMember != null) {
+						 %>
+						 <div>
+							 <label style="width : 150px; margin-top : 30px;"><%=sessionMember.getId()%>님 환영합니다</label>
+							 <button float="right" class="btn btn-default" onclick="location.href='../logoutAction.jsp'">Logout</button>
+						 </div>
+						 <%
+						 } else {
+						 %>
+						 <span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+						 <span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
+						 <%
+							 }
+
+						 %>
+
+					 </div>
                   </div>
                </nav>
                <div class="clearfix"></div>

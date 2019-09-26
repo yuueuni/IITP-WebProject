@@ -48,20 +48,22 @@ public class DogDAO {
 
 			// Column
 			// PK , name , email , password
-			String sql = "INSERT INTO dog(name,weight,birth_day,breed,remarks,photo,location) VALUES (?,?,?,?,?,?,?);";
+			String sql = "INSERT INTO dog(dog_num,name,weight,birth_day,breed,remarks,photo,location) VALUES (?,?,?,?,?,?,?,?);";
 			// String sql = "INSERT INTO daily VALUES (5,now(),'aaa',?,?,?,?);";
 			pstmt = conn.prepareStatement(sql);
 
 			// pstmt.setInt(1,vo.getId());
 
-			pstmt.setString(1, vo.getName());
-			pstmt.setInt(2, vo.getWeight());
-			pstmt.setInt(3, vo.getAge());
-			pstmt.setString(4, vo.getBreed());
-			pstmt.setString(5, vo.getRemarks());
-			pstmt.setString(6, vo.getPhoto());
-			pstmt.setString(7, vo.getLocation());
-			
+			pstmt.setString(1,vo.getName()+vo.getAge());
+			pstmt.setString(2, vo.getName());
+			pstmt.setInt(3, vo.getWeight());
+			pstmt.setInt(4, vo.getAge());
+			pstmt.setString(5, vo.getBreed());
+			pstmt.setString(6, vo.getRemarks());
+			pstmt.setString(7, "temp");
+			pstmt.setString(8, vo.getLocation());
+
+
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -102,15 +104,13 @@ public class DogDAO {
 	                    
 	                	DogVO dogvo = new DogVO();
 	                	dogvo.setName(rs.getString("name"));
-	                    
-	                	
-	                	
-	                	
-	                	
-	                	
-	                	
-	                	
-	                	
+	                    //dogvo.setDog_num(rs.getString("dog_num"));
+	                    dogvo.setAge(rs.getInt("birth_day"));
+	                    dogvo.setBreed(rs.getString("breed"));
+	                    dogvo.setLocation(rs.getString("location"));
+	                    dogvo.setRemarks(rs.getString("remarks"));
+	                    dogvo.setWeight(rs.getInt("weight"));
+						list.add(dogvo);
 
 	                    }while(rs.next());
 	            	}

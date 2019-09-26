@@ -1,3 +1,4 @@
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -214,7 +215,9 @@
         content: "✓";
         }
         body .container_2 .content .submit-wrap {
-        position: absolute;
+            margin-top: 30px;
+            margin-bottom: 10px;
+
         bottom: 0;
         width: 100%;
         }
@@ -235,6 +238,12 @@
         </style>
 </head>
    <body>
+   <%
+       UserVO userVO = (UserVO) request.getAttribute("member");
+       if (userVO != null) {
+           session.setAttribute("member", userVO);
+       }
+   %>
       <!--header-part-->
       <div class="banner-background" id="to-top">
       <div class="container">
@@ -272,7 +281,30 @@
                            </div>
                         </div>
                         <div>
-                           <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h4>Sign in / Sign up</h4></button>
+                            <%
+                                UserVO sessionMember = (UserVO) session.getAttribute("member");
+                                if (sessionMember != null) {
+                            %>
+                            <div>
+
+                                <label><%=sessionMember.getId()%>님</label>
+                                <button float="right" class="btn btn-default" onclick="location.href='../logoutAction.jsp'">Logout</button>
+                            </div>
+                            <%
+                            } else {
+                            %>
+
+                            <span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+                            <span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
+                            <%
+                                }
+
+                            %>
                         </div>
                      </div>
                   </div>
@@ -287,29 +319,45 @@
       <div class="about-pg">
             <h3 style="margin-bottom:30px;">댕댕이 관리정보를 입력해주세요!</h3>
          <section style="position:relative;" class="container_2">
-            <article class="half">                    
+            <article class="half">
                     <div class="content">
                         <div class="signin-cont cont">
+
                              <form name="fr" action="Logic" method="GET" enctype="multipart/form-data">
-                             
-                               <input type="text" name ="walk" class="inpt" required  placeholder="산책 횟수">
-                               <label for="walk">산책</label>
-                               
-                               <input type="text" name ="snack" class="inpt" required placeholder="밥 횟수">
-                               <label for="snack">사료</label>
-                               
-                               <input type="text" name ="feedtime" class="inpt"  required placeholder="간식 횟수">
-                               <label for="feed">간식</label>
-                               
-                               <input type="text" name ="weight" class="inpt"  required placeholder="몸무게 ">
-                               <label for="weight">몸무게</label>
-                                                             
-                                <div class="submit-wrap">                                    
-                                    <input type="submit" value="등록" class="submit">                              
+
+                                 <div>
+                                     산책:
+                                         <input type="text" id="walk" name ="walk" class="inpt" required  placeholder="산책 횟수"></span>
+                                 </div>
+
+<div>
+    댕댕이 식사:
+    <input type="text" id="snack" name ="snack" class="inpt" required placeholder="밥 횟수">
+</div>
+
+
+<div>
+    댕댕이 간식 횟수:
+    <input type="text" id="feed" name ="feedtime" class="inpt"  required placeholder="간식 횟수">
+
+</div>
+
+
+
+<div>
+    댕댕이 몸무게:
+    <input type="text" id="weight" name ="weight" class="inpt"  required placeholder="몸무게 ">
+</div>
+
+
+
+
+                                <div class="submit-wrap" style="margin-top:30px ">
+                                    <input type="submit" value="등록" class="submit">
                              	</div>
-                            
+
                             </form>
- 
+
                     </div>
                </div>
             </article>
@@ -341,7 +389,7 @@
         </div>
       <!--about-->
       <!--footer-->
-      <div class="footer">
+      <div class="footer" style="margin-top: 50px;">
          <div class="container">
          <div class="col-md-3 mrg1">
             <div class="logo">

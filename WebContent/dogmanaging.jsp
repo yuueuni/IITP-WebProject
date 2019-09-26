@@ -1,18 +1,21 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@page import="main.java.kr.mycom.jdbcexam.VO.DailyVO"%>
 <%@page import="main.java.kr.mycom.jdbcexam.DAO.DailyDAO"%>
 
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.DogVO" %>
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
+
 <!-- chart -->
-	
+
 <!DOCTYPE html>
 <%
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			DailyDAO dao = DailyDAO.getInstace();
+			DailyVO data = new DailyVO();
 			List<DailyVO> list = dao.getDaily();
-			DailyVO data = new DailyVO();	
+
 		//List<DailyVO> list = (List<DailyVO>) request.getAttribute("list");
 				
 %>
@@ -28,16 +31,11 @@
 <link href="web_page/css/bootstrap.min.css" rel="stylesheet"	type="text/css">
 <!--coustom css-->
 <link href="web_page/css/style.css" rel="stylesheet" type="text/css" />
-<!-- calendar -->
-<link href="https://www.jqueryscript.net/css/jquerysctipttop.css"
-	rel="stylesheet" type="text/css">
-<link href="Calendar/dist/equinox.css" rel="stylesheet" type="text/css">
-
 
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700'	rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'	rel='stylesheet' type='text/css'>
-	
+
 <!-- calendar -->
 <link rel=" shortcut icon" href="image/favicon.ico">
 
@@ -69,11 +67,9 @@
 		});
 	});
 </script>
-<script type="application/x-javascript">
-	      
-    addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+	<script type="text/javascript" src="../jquery.js"></script>
 
-</script>
+
 <style>
 .navbar-default .navbar-nav>li>a:hover {
    color: #fff;
@@ -126,8 +122,13 @@ ul.nav.navbar-nav li a.active{
 
 	.dogageimg{
 	height: 300px;
-	weight: 300px"
+	weight: 300px;
+
 	}
+.dogprofile{
+	text-align: center;
+}
+
 </style>
 </head>
 <body  style="padding:0;">
@@ -164,16 +165,35 @@ ul.nav.navbar-nav li a.active{
 											<li><a href="about.jsp">소개</a></li>
 											<li><a class="active" href="dogmanaging.jsp">강아지매니징<span class="sr-only">(current)</span></a></li>
 											<li><a href="dogdictionary.jsp">애견사전</a></li>
-											<li><a href="bbs.jsp">커뮤니티</a></li>
+											<li><a href="bbsVO.jsp">커뮤니티</a></li>
 										</ul>
 									</div>
 								</div>
 								<div>
-									<button class="label label-primary"
-										onclick="location='signin.jsp'"
-										style="margin-top: .5em; padding-bottom: 0em;">
-										<h4>Sign in / Sign up</h4>
-									</button>
+									<%
+										UserVO sessionMember = (UserVO) session.getAttribute("member");
+										if (sessionMember != null) {
+									%>
+									<div>
+
+										<label><%=sessionMember.getId()%>님</label>
+										<button float="right" class="btn btn-default" onclick="location.href='../logoutAction.jsp'">Logout</button>
+									</div>
+									<%
+									} else {
+									%>
+
+									<span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+									<span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
+									<%
+										}
+
+									%>
 								</div>
 							</div>
 						</div>
@@ -186,8 +206,17 @@ ul.nav.navbar-nav li a.active{
 	<!--header-->
 	<!--about-->
 	<div class="about-pg">
+		<div class="dogprofile">
 		<h3>강아지 매니징</h3>
-		<br>
+		<div>
+			<img src="web_page/images/4.jpg" class="img-circle"   alt="Cinque Terre" width="100" height="100">
+		</div>
+		이름 : momo<br>
+		나이 : 2<br>
+		지역 : seoul<br>
+		특징 : 털이많음
+		<hr>
+		</div>
 		
 		<div class="container">
 			<br>
@@ -206,200 +235,78 @@ ul.nav.navbar-nav li a.active{
 	<div class="clearfix"></div>
 	<br>
 	<hr>
-   <!-- calendar -->
-   <div class="container">
 
-        <!-- 일자 클릭시 메뉴오픈 -->
-        <div id="contextMenu" class="dropdown clearfix">
-            <ul class="dropdown-menu dropNewEvent" role="menu" aria-labelledby="dropdownMenu"
-                style="display:block;position:static;margin-bottom:5px;">
-                <li><a tabindex="-1" href="#">산책</a></li>
-                <li><a tabindex="-1" href="#">음식</a></li>
-                <li><a tabindex="-1" href="#">간식</a></li>
-                <li><a tabindex="-1" href="#">배변</a></li>
-                <li class="divider"></li>
-                <li><a tabindex="-1" href="#" data-role="close">Close</a></li>
-            </ul>
-        </div>
-
-        <div id="wrapper">
-            <div id="loading"></div>
-            <div id="calendar"></div>
-        </div>
-
-
-        <!-- 일정 추가 MODAL -->
-        <div class="modal fade" tabindex="-1" role="dialog" id="eventModal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title"></h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-allDay">하루종일</label>
-                                <input class='allDayNewEvent' id="edit-allDay" type="checkbox"></label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-title">일정명</label>
-                                <input class="inputModal" type="text" name="edit-title" id="edit-title"
-                                    required="required" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-start">시작</label>
-                                <input class="inputModal" type="text" name="edit-start" id="edit-start" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-end">끝</label>
-                                <input class="inputModal" type="text" name="edit-end" id="edit-end" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-type">구분</label>
-                                <select class="inputModal" type="text" name="edit-type" id="edit-type">
-                                    <option value="산책">산책</option>
-                                    <option value="음식">음식</option>
-                                    <option value="간식">간식</option>
-                                    <option value="배변">배변</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-color">색상</label>
-                                <select class="inputModal" name="color" id="edit-color">
-                                    <option value="#D25565" style="color:#D25565;">빨간색</option>
-                                    <option value="#9775fa" style="color:#9775fa;">보라색</option>
-                                    <option value="#ffa94d" style="color:#ffa94d;">주황색</option>
-                                    <option value="#74c0fc" style="color:#74c0fc;">파란색</option>
-                                    <option value="#f06595" style="color:#f06595;">핑크색</option>
-                                    <option value="#63e6be" style="color:#63e6be;">연두색</option>
-                                    <option value="#a9e34b" style="color:#a9e34b;">초록색</option>
-                                    <option value="#4d638c" style="color:#4d638c;">남색</option>
-                                    <option value="#495057" style="color:#495057;">검정색</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label class="col-xs-4" for="edit-desc">설명</label>
-                                <textarea rows="4" cols="50" class="inputModal" name="edit-desc"
-                                    id="edit-desc"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer modalBtnContainer-addEvent">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                        <button type="button" class="btn btn-primary" id="save-event">저장</button>
-                    </div>
-                    <div class="modal-footer modalBtnContainer-modifyEvent">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                        <button type="button" class="btn btn-danger" id="deleteEvent">삭제</button>
-                        <button type="button" class="btn btn-primary" id="updateEvent">저장</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        <div class="panel panel-default">
-
-            <div class="panel-heading">
-                <h3 class="panel-title">필터</h3>
-            </div>
-
-            <div class="panel-body">
-
-                <div class="col-lg-6">
-                    <!--<label for="calendar_view">구분별</label>-->
-                    <div class="input-group">
-                        <select class="filter" id="type_filter" multiple="multiple">
-                            <option value="산책">산책</option>
-                            <option value="음식">음식</option>
-                            <option value="간식">간식</option>
-                            <option value="배변">배변</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                   <!-- <label for="calendar_view">등록자별</label>-->
-                    <div class="input-group">
-                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="정연"
-                                checked>정연</label>
-                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="다현"
-                                checked>다현</label>
-                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="사나"
-                                checked>사나</label>
-                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="나연"
-                                checked>나연</label>
-                        <label class="checkbox-inline"><input class='filter' type="checkbox" value="지효"
-                                checked>지효</label>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- /.filter panel -->
-    </div>
-	
-	<div style="text-align: center;" class="about-pg ">
+	<span style="text-align: center;" class="about-pg ">
 		<h3>우리 댕댕이 나이는 사람으로 몇 살일까?</h3>
-	<img class="dogageimg" src="web_page/images/dogage.png" /> <br> <br>
-		<form action="" enctype="multipart/form-data">
+		<div>
+		<img class="dogageimg" src="web_page/images/dogage.png" /> <br> <br>
+</div>
+		<form action="dogage.jsp" method="GET" enctype="multipart/form-data">
+
 			<div class="dogsize-botton">
-				<input type="radio" name="dogsize" value="big">대형견<br>
-				<br> <input type="radio" name="dogsize" value="small">소형견<br>
+				<input type="radio" name="dogsize" value="big">  대형견<br>
+				<br> <input type="radio" name="dogsize" value="small">  소형견<br>
 				<br> <br>
 			</div>
-			<input style="width: 20em;" type="text" name="dogage" id="dogage"
-				class="inpt" placeholder="강아지 나이를 입력해주세요"> <br> <br>
+
+			<input style="width: 20em;" type="text" name="dogage" id="dogage" 	class="inpt" placeholder="강아지 나이를 입력해주세요"> <br> <br>
+
+
 			<div class="submit-wrap">
-				<!-- <input type="button" class="calbutton" value="강아지 나이 계산하기" > -->
-			</div>
-			<!-- <button data-toggle="collapse"  onclick="dogage_click()" >Collapsible</button> -->
-			<div class="container">
-				<a href="javascript:doDisplay();" class="btn btn-info">계산하기</a>
-					<div id="myDIV">
-					</div>
-				<div id="demo" class="collapse">
-					<p id="result"></p>
-				</div>
-				
-			</div>
+				<!--<button  id="dogage" class="btn btn-info" onclick="dogage_click()" >댕댕이 나이 계산하기</button>-->
+				<input type="submit"  style="margin-bottom: 50px" class="btn btn-default" value="댕댕이 나이 계산하기">
+
+            </div>
+
+			<!--<span>댕댕이의 나이는 사람나이로 26살 입니다.</span>-->
+
+			<div id="dogageresult">	</div>
 		</form>
+</span>
 
 	</div>
-	
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$(".button").click(function(){
+				callAjax();
+			});
+		});
+
+		function callAjax(){
+			$.ajax({
+				type: "GET",
+				url : "dogage.jsp",
+				data: "text",
+				success: whenSuccess,
+				error: whenError
+			});
+
+		}
+
+		function whenSuccess(resdata){
+
+			$("#dogageresult").html(dogsize);
+
+			console.log(dogsize);
+
+		}
+
+
+
+		function whenError(){
+
+			alert("Error");
+
+		}
+
+	</script>
+
+
+
 
 	<script>
-		
-	var bDisplay = true;
-	function doDisplay(){
-	    var con = document.getElementById("myDIV");
-	    if(con.style.display=='none'){
-	        con.style.display = 'block';
-	        var html = '';
-	        html += '<p>'+dogage_click()+'</p>';
-	        $('#myDIV').html(html);
-	    }else{
-	        con.style.display = 'none';
-	    }
-	}
 
-	
-	
 		google.charts.load('current', {
 			packages : [ 'corechart', 'line' ]
 		});
@@ -426,11 +333,7 @@ ul.nav.navbar-nav li a.active{
 %>
 				
 				]);
-			
-			
-			var chartdata;
-			
-			
+
 			var options = {
 				hAxis : {
 					title : 'Day'
@@ -446,6 +349,7 @@ ul.nav.navbar-nav li a.active{
 			chart.draw(data, options);
 		}
 		</script>
+
 		<script>
 		google.charts.load('current', {
 			packages : [ 'corechart', 'line' ]
@@ -471,7 +375,6 @@ ul.nav.navbar-nav li a.active{
 				}
 			}
 %>
-				
 				]);
 			
 			
@@ -493,39 +396,8 @@ ul.nav.navbar-nav li a.active{
 
 			chart.draw(data, options);
 		}		
-
-		//dog age to human
-		var humanage;
-		var dogsize;
-		var dogage;
-		var result = document.getElementsByName("result");
-
-		function dogage_click() {
-
-			dogsize = document.getElementsByName("dogsize");
-			dogsize = dogsize[0].value;
-
-			dogage = document.getElementById("dogage").value;
-			console.log(dogage);
-
-			if (dogsize == "big" && dogage > 0) {
-				console.log("대형견")
-				humanage = 24 + (dogage - 2) * 4;
-				//var final1 = document.createElment("h1");
-				//final1.innerHTML = humanage;
-				return ("사람나이로 환산 시 우리 댕댕이 나이는 현재 " + humanage + "살 입니다.");
-				//result.appendChild(final1);
-
-			} else {
-				humanage = 12 + (dogage - 1) * 7;
-				document.getElementById("result").innerHTML = humage;
-				return ("사람나이로 환산 시 우리 댕댕이 나이는 현재 " + humanage + "살 입니다.");
-				// var result = document.createElement("h1");
-				//result.dogsize.appendChild(result);
-			}
-
-		}//dog age to human
 		</script>
+
 		
     <script src="vendor/js/jquery.min.js"></script>
     <script src="vendor/js/bootstrap.min.js"></script>
@@ -538,7 +410,7 @@ ul.nav.navbar-nav li a.active{
     <script src="js/addEvent.js"></script>
     <script src="js/editEvent.js"></script>
     <script src="js/etcSetting.js"></script>
-		
+
 	
 	<!--about-->
 
@@ -624,19 +496,7 @@ ul.nav.navbar-nav li a.active{
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
-	<script src="Calendar/dist/equinox.min.js">
-		$('.event-calendar').equinox({
-			events : [ {
-				start : '2018-04-20 17:30',
-				end : '2018-04-22 17:30',
-				title : 'jQueryScript.Net',
-				url : '#',
-				class1 : '',
-				color : '#000',
-				data : {}
-			} ],
-		});
-	</script>
+
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push([ '_setAccount', 'UA-36251023-1' ]);

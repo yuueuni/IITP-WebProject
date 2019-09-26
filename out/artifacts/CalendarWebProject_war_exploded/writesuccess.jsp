@@ -1,5 +1,6 @@
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +53,13 @@
 
 </head>
 <body>
+<%
+	UserVO userVO = (UserVO) request.getAttribute("member");
+	if (userVO != null) {
+		session.setAttribute("member", userVO);
+	}
+%>
+
 	<!--header-part-->
 	<div class="banner-background" id="to-top">
 		<div class="container">
@@ -85,16 +93,33 @@
 											<li><a href="about.jsp">소개</a></li>
 											<li><a href="dogmanaging.jsp">강아지매니징</a></li>
 											<li><a href="dogdictionary.jsp">애견사전</a></li>
-											<li><a href="bbs.jsp">커뮤니티</a></li>
+											<li><a href="bbsVO.jsp">커뮤니티</a></li>
 										</ul>
 									</div>
 								</div>
 								<div>
-									<button class="label label-primary"
-										onclick="location='signin.jsp'"
-										style="margin-top: .5em; padding-bottom: 0em;">
-										<h4>Sign in / Sign up</h4>
-									</button>
+									<%
+										UserVO sessionMember = (UserVO) session.getAttribute("member");
+										if (sessionMember != null) {
+									%>
+									<div>
+
+										<label><%=sessionMember.getId()%>님</label>
+										<button float="right" class="btn btn-default" onclick="location.href='../logoutAction.jsp'">Logout</button>
+									</div>
+									<%
+									} else {
+									%> <span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+									<span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
+									<%
+										}
+
+									%>
 								</div>
 							</div>
 						</div>

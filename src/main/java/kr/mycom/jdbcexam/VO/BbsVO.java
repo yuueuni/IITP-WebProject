@@ -1,14 +1,15 @@
-package main.java.bbs;
+package main.java.kr.mycom.jdbcexam.VO;
 
 import java.util.Date;
 
-public class Bbs {
+public class BbsVO {
 
 	private int board_index;
 	private String id;
 	private String title;
 	private String content;
 	private Date reg_date;
+	private int bbsAvailable;
 
 	public int getBoard_index() {
 		return board_index;
@@ -50,14 +51,23 @@ public class Bbs {
 		this.reg_date = reg_date;
 	}
 
-	public Bbs(int board_index, String id, String title, String content, Date reg_date) {
+	public int getBbsAvailable() {
+		return bbsAvailable;
+	}
+
+	public void setBbsAvailable(int bbsAvailable) {
+		this.bbsAvailable = bbsAvailable;
+	}
+
+	public BbsVO(int board_index, String id, String title, String content, Date reg_date, int bbsAvailable) {
 		this.board_index = board_index;
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.reg_date = reg_date;
+		this.bbsAvailable = bbsAvailable;
 	}
 
-	public Bbs() {
+	public BbsVO() {
 	}
 }

@@ -1,5 +1,6 @@
+<%@ page import="main.java.kr.mycom.jdbcexam.VO.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,11 +98,30 @@
 									</div>
 								</div>
 								<div>
-									<button class="label label-primary"
-										onclick="location='signin.jsp'"
-										style="margin-top: .5em; padding-bottom: 0em;">
-										<h4>Sign in / Sign up</h4>
-									</button>
+									<%
+										UserVO sessionMember = (UserVO) session.getAttribute("member");
+										if (sessionMember != null) {
+									%>
+									<div>
+
+										<label><%=sessionMember.getId()%>님</label>
+										<button float="right" class="btn btn-default" onclick="location.href='../logoutAction.jsp'">Logout</button>
+									</div>
+									<%
+									} else {
+									%>
+
+									<span>
+                                <button class="label label-primary" onclick="location='signin.jsp'" style="margin-top:.5em; padding-bottom:0em;"><h5>Sign in</h5></button>
+                            </span>
+
+									<span>
+                                <button class="label label-primary" onclick="location='signup.jsp'" style="margin-top:.5em; margin-left:10px; padding-bottom:0em;"><h5>Sign up</h5></button>
+                            </span>
+									<%
+										}
+
+									%>
 								</div>
 							</div>
 						</div>
@@ -174,12 +194,19 @@
 
 		<hr>
 		<nav style="text-align: center;">
-			<div class="submit-wrap">
-				<input type="submit" value="등록">
-			</div>
+			<span class="submit-wrap">
+				<input type="submit" class="btn btn-default" value="댕댕이 정보 등록">
+
+			</span>
 		</nav>
 		<br>
-	</form>
+	</form><nav style="text-align: center;">
+		<span class="submit-wrap">
+			<button class="btn btn-default" onclick="location.href='../doglist.jsp'">등록된 댕댕이 확인</button>
+
+		</span>
+	</nav>
+
 
 	<!--services-->
 	<!--footer-->

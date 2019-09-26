@@ -88,7 +88,8 @@ function calDateWhenDragnDrop(event) {
 var calendar = $('#calendar').fullCalendar({
 
   eventRender: function (event, element, view) {
-//일정에 hover시 요약
+
+    //일정에 hover시 요약
     element.popover({
       title: $('<div />', {
         class: 'popoverTitleCalendar',

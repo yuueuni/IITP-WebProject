@@ -1,6 +1,10 @@
 package main.java.kr.mycom.jdbcexam.DogServlet;
 
-import java.io.IOException; 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +27,44 @@ public class DogServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-    	doGet(request, response);
-    }
+
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=UTF-8");
+
+		try {
+			DogDAO dao = new DogDAO();
+			List<DogVO> list = dao.getDog();
+
+			request.setAttribute("list",list);
+			RequestDispatcher rd = request.getRequestDispatcher("../doglist.jsp");
+			rd.forward(request,response);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		//json write
+		//response.getWriter().write(getJSON());
+	}
+
+//	public String getJSON(){
+//		StringBuffer result = new StringBuffer("");
+//		result.append("{\result\":[");
+//		DailyDAO dao = new DailyDAO();
+//		List<DailyVO> dogdaily = dao.getDaily();
+//		for(int i=0;i<dogdaily.size();i++){
+//			result.append("[{id\":\""+dogdaily.get(i).getReg_index()+"\"},");
+//			result.append("[{walk\":\""+dogdaily.get(i).getWalk()+"\"},");
+//			result.append("[{snack\":\""+dogdaily.get(i).getSnack()+"\"},");
+//			result.append("[{feed\":\""+dogdaily.get(i).getFeed()+"\"},");
+//			result.append("[{date\":\""+dogdaily.get(i).getDate()+"\"},");
+//			result.append("[{facecondition\":\""+dogdaily.get(i).getFaces_condition()+"\"},");
+//		}
+//		result.append("]}");
+//		return result.toString();
+//	}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //    	request.setCharacterEncoding("utf-8");
@@ -51,7 +91,8 @@ public class DogServlet extends HttpServlet {
     	vo.setWeight(Integer.parseInt(request.getParameter("weight")));
     	vo.setFeedtime(Integer.parseInt(request.getParameter("feedtime")));
     	DailyDAO dao = new DailyDAO();
-    	
+
+
     	dao.insertDaily(vo);
     	response.sendRedirect("dogmanaging.jsp");  	
     	

@@ -90,7 +90,7 @@ public class DailyDAO {
 
 	        try {
 	            conn = getConnection();
-	            String sql = "SELECT date,dog_num,weight,snack,feed,walk,faces_condition,feedtime FROM daily ";
+	            String sql = "SELECT * FROM daily ";
 	            ps = conn.prepareStatement(sql);
 	            rs = ps.executeQuery();
 

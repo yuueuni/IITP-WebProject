@@ -17,6 +17,7 @@
 </head>
 
 <body>
+여기 로그아웃 화면이얌.
 
 	<%
 
@@ -28,7 +29,7 @@
 
 	<script>	//메인으로 이동
 
-		location.href = 'Main.jsp';
+		location.href = 'SuccessLogout.jsp';
 
 	</script>
 
